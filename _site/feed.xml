@@ -1,1 +1,142 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://bangjinhyuk.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bangjinhyuk.github.io/" rel="alternate" type="text/html" /><updated>2021-02-18T00:21:15+09:00</updated><id>https://bangjinhyuk.github.io/feed.xml</id><title type="html">BBangi Blog</title><subtitle>방진혁 개발 공부 블로그</subtitle><author><name>Bangjinhyuk</name></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://bangjinhyuk.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bangjinhyuk.github.io/" rel="alternate" type="text/html" /><updated>2021-02-19T15:53:07+09:00</updated><id>https://bangjinhyuk.github.io/feed.xml</id><title type="html">BBangi Blog</title><subtitle>방진혁 개발 공부 블로그</subtitle><author><name>Bangjinhyuk</name></author><entry><title type="html">github-vscode-ubuntu 연동 오류들</title><link href="https://bangjinhyuk.github.io/2021/02/15/github-vscode-ubuntu-%EC%97%B0%EB%8F%99-%EC%98%A4%EB%A5%98%EB%93%A4.html" rel="alternate" type="text/html" title="github-vscode-ubuntu 연동 오류들" /><published>2021-02-15T17:00:00+09:00</published><updated>2021-02-15T17:00:00+09:00</updated><id>https://bangjinhyuk.github.io/2021/02/15/github-vscode-ubuntu%20%EC%97%B0%EB%8F%99%20%EC%98%A4%EB%A5%98%EB%93%A4</id><content type="html" xml:base="https://bangjinhyuk.github.io/2021/02/15/github-vscode-ubuntu-%EC%97%B0%EB%8F%99-%EC%98%A4%EB%A5%98%EB%93%A4.html">&lt;h2 id=&quot;aws-nodejs-서버-구축하여-github-vscode-ubuntu-사용시-발생했던-오류들&quot;&gt;AWS-Node.js 서버 구축하여 github-vscode-ubuntu 사용시 발생했던 오류들&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;vscode에서 ftp-simple을 사용하여 코드 수정시 Permission Denied가 뜰때
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $ chown -R root:root (디렉토리 이름)
+ $ chmod -R 777 (디렉토리 이름)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ubuntu에서 깃허브로 올리는 순서
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $ sudo git init
+ $ git status
+ $ sudo git add -A : 모든 파일 추가
+ $ sudo git commit
+ $ sudo git commit -m &quot;커밋 메세지 작성&quot;
+ $ sudo git push origin +master(또는 main)
+ $ sudo git pull(저장소 업데이트)
+ $ git log
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;error: Your local changes to the following files would be overwritten by merge: 와 같은 에러 발생시
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $ git stash
+ $ sudo git pull(저장소 업데이트)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;참조 사이트&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+      &lt;li&gt;[git pull 에러시] (https://steemit.com/develope/@snowsprout/git-git-pull-error-your-local-changes-to-the-following-files-would-be-overwritten-by-merge)&lt;/li&gt;
+      &lt;li&gt;[ftp-simple 수정 권한 에러시] (https://share4share.tistory.com/32)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;맨위로👆&lt;/a&gt;&lt;/p&gt;</content><author><name>Bangjinhyuk</name></author><summary type="html">AWS-Node.js 서버 구축하여 github-vscode-ubuntu 사용시 발생했던 오류들</summary></entry><entry><title type="html">Node.js 서버 구축 1</title><link href="https://bangjinhyuk.github.io/2021/02/14/Node.js-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95-1.html" rel="alternate" type="text/html" title="Node.js 서버 구축 1" /><published>2021-02-14T17:00:00+09:00</published><updated>2021-02-14T17:00:00+09:00</updated><id>https://bangjinhyuk.github.io/2021/02/14/Node.js%20%EC%84%9C%EB%B2%84%20%EA%B5%AC%EC%B6%95%201</id><content type="html" xml:base="https://bangjinhyuk.github.io/2021/02/14/Node.js-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95-1.html">&lt;h2 id=&quot;aws-서버-구축-및-node-js-설치-참조&quot;&gt;aws 서버 구축 및 Node JS 설치 &lt;a href=&quot;https://blog-han.tistory.com/58?category=711525&quot;&gt;&lt;u&gt;참조&lt;/u&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;우분투 서버 업데이트&lt;/p&gt;
+
+    &lt;p&gt;$ sudo apt-get update&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Node JS 설치&lt;/p&gt;
+
+    &lt;p&gt;$ sudo apt-get install nodejs&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Node Package Manager : NPM 설치&lt;/p&gt;
+
+    &lt;p&gt;$ sudo apt-get install npm&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;express를 설치(&lt;span style=&quot;color:#7EBDCB&quot;&gt;-g는 Global 옵션으로 어느 path에서나 express를 사용할 수 있도록 하는 옵션&lt;/span&gt;)&lt;/p&gt;
+
+    &lt;p&gt;$ sudo npm install -g express&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Express generator 설치&lt;/p&gt;
+
+    &lt;p&gt;$ sudo npm install -g express-generator@4&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;nodemon 설치 &lt;a href=&quot;https://edu.goorm.io/learn/lecture/557/%ED%95%9C-%EB%88%88%EC%97%90-%EB%81%9D%EB%82%B4%EB%8A%94-node-js/lesson/382959/%ED%99%95%EC%9E%A5%EB%AA%A8%EB%93%88-nodemon&quot;&gt;-설명 사이트&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;$ sudo npm install -g nodemon&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;우분투 폴더 만드는 명령문&lt;/p&gt;
+
+    &lt;p&gt;$ sudo mkdir (만들고 싶은 폴더 이름1) &amp;amp;&amp;amp; cd (만들고 싶은 폴더 이름1) &amp;amp;&amp;amp; sudo mkdir (만들고 싶은 폴더 이름2) &amp;amp;&amp;amp; cd (만들고 싶은 폴더 이름2)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;express 기본 template을 생성 (&lt;span style=&quot;color:#7EBDCB&quot;&gt;sudo 안쓸시 permission denied 뜰수 있음&lt;/span&gt;)&lt;/p&gt;
+
+    &lt;p&gt;$ sudo express -e&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;npm 설치&lt;/p&gt;
+
+    &lt;p&gt;$  sudo npm install&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;app.js　수정&lt;/p&gt;
+
+    &lt;p&gt;$ sudo vi app.js&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app.js&lt;/code&gt;　수정 내용&lt;/p&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;c1&quot;&gt;// port setup&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PORT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+     &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+     &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Express server listening on port &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt; 파일의 node 모니터링을 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;start&lt;/code&gt; 항목 수정&lt;/p&gt;
+
+    &lt;p&gt;$ sudo vi package.json&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;“start” 항목 수정 내용&lt;/p&gt;
+
+    &lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;script&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+   &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;nodemon app.js&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;서버 실행&lt;/p&gt;
+
+    &lt;p&gt;$ npm start&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;서버 백그라운드 실행 (ex. [1]1234 =&amp;gt; process ID), ($ ps -ef =&amp;gt; 프로세스 확인),(kill [processId] =&amp;gt;프로세스 kill)&lt;/p&gt;
+
+    &lt;p&gt;$ sudo nohup npm start &amp;amp;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;자동 redirection (포트를 입력하지 않고 넘길 수 있도록 하는 명령문)&lt;/p&gt;
+
+    &lt;p&gt;$ sudo iptables -A PREROUTING -t nat -i eth0 -p tcp –dport 80 -j REDIRECT –to-port 9000&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;다른 참조 사이트
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://blog-han.tistory.com/59?category=711525&quot;&gt;EC2 VS code 리모트 방법1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://boot.tistory.com/21&quot;&gt;EC2 VS code 리모트 방법2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://hoik92.github.io/aws/2019/06/03/AWS-EC2-Connect-Using-VSCode.html&quot;&gt;EC2 VS code 리모트 방법3&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://teddylee777.github.io/aws/visualstudiocode-%EC%97%90%EC%84%9C-aws-remote-%EC%97%B0%EA%B2%B0&quot;&gt;EC2 VS code 리모트 방법4&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://velog.io/@dysim361/%EC%9A%B0%EB%B6%84%ED%88%ACubunto-GitHub-%EC%97%B0%EB%8F%99-%EB%B0%8F-%EC%97%85%EB%A1%9C%EB%93%9C&quot;&gt;우분투 깃허브 연동1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://uhou.tistory.com/99&quot;&gt;우분투 깃허브 연동2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://loy124.tistory.com/199?category=768865&quot;&gt;Mysql 서버 설치&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;맨위로👆&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Bangjinhyuk</name></author><summary type="html">aws 서버 구축 및 Node JS 설치 참조 우분투 서버 업데이트 $ sudo apt-get update Node JS 설치 $ sudo apt-get install nodejs Node Package Manager : NPM 설치 $ sudo apt-get install npm express를 설치(-g는 Global 옵션으로 어느 path에서나 express를 사용할 수 있도록 하는 옵션) $ sudo npm install -g express Express generator 설치 $ sudo npm install -g express-generator@4 nodemon 설치 -설명 사이트 $ sudo npm install -g nodemon 우분투 폴더 만드는 명령문 $ sudo mkdir (만들고 싶은 폴더 이름1) &amp;amp;&amp;amp; cd (만들고 싶은 폴더 이름1) &amp;amp;&amp;amp; sudo mkdir (만들고 싶은 폴더 이름2) &amp;amp;&amp;amp; cd (만들고 싶은 폴더 이름2) express 기본 template을 생성 (sudo 안쓸시 permission denied 뜰수 있음) $ sudo express -e npm 설치 $ sudo npm install app.js　수정 $ sudo vi app.js app.js　수정 내용 ```javascript // port setup app.set(‘port’, process.env.PORT || 9000);</summary></entry></feed>

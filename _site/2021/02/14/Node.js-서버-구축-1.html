@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Node.js 서버 구축 1 - BBangi Blog
+    
+  </title>
+
+  <meta name="description" content="aws 서버 구축 및 Node JS 설치 참조 우분투 서버 업데이트 $ sudo apt-get update Node JS 설치 $ sudo apt-get install nodejs Node Package Manager : NPM 설치 $ sudo apt-get install npm...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://bangjinhyuk.github.io/2021/02/14/Node.js-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95-1.html">
+  <link rel="alternate" type="application/rss+xml" title="BBangi Blog" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">BBangi Blog</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+<header class="masthead" style="background-image: url('/img/posts/01.jpg')">
+  
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Node.js 서버 구축 1</h1>
+            
+            <h2 class="subheading">AWS-Node.js 서버 구축 공부.</h2>
+            
+            <span class="meta">Posted by
+              <a href="#">Bangjinhyuk</a>
+              on February 14, 2021 &middot; <span class="reading-time" title="Estimated read time">
+  
+   2 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <h2 id="aws-서버-구축-및-node-js-설치-참조">aws 서버 구축 및 Node JS 설치 <a href="https://blog-han.tistory.com/58?category=711525"><u>참조</u></a></h2>
+<ol>
+  <li>
+    <p>우분투 서버 업데이트</p>
+
+    <p>$ sudo apt-get update</p>
+  </li>
+  <li>
+    <p>Node JS 설치</p>
+
+    <p>$ sudo apt-get install nodejs</p>
+  </li>
+  <li>
+    <p>Node Package Manager : NPM 설치</p>
+
+    <p>$ sudo apt-get install npm</p>
+  </li>
+  <li>
+    <p>express를 설치(<span style="color:#7EBDCB">-g는 Global 옵션으로 어느 path에서나 express를 사용할 수 있도록 하는 옵션</span>)</p>
+
+    <p>$ sudo npm install -g express</p>
+  </li>
+  <li>
+    <p>Express generator 설치</p>
+
+    <p>$ sudo npm install -g express-generator@4</p>
+  </li>
+  <li>
+    <p>nodemon 설치 <a href="https://edu.goorm.io/learn/lecture/557/%ED%95%9C-%EB%88%88%EC%97%90-%EB%81%9D%EB%82%B4%EB%8A%94-node-js/lesson/382959/%ED%99%95%EC%9E%A5%EB%AA%A8%EB%93%88-nodemon">-설명 사이트</a></p>
+
+    <p>$ sudo npm install -g nodemon</p>
+  </li>
+  <li>
+    <p>우분투 폴더 만드는 명령문</p>
+
+    <p>$ sudo mkdir (만들고 싶은 폴더 이름1) &amp;&amp; cd (만들고 싶은 폴더 이름1) &amp;&amp; sudo mkdir (만들고 싶은 폴더 이름2) &amp;&amp; cd (만들고 싶은 폴더 이름2)</p>
+  </li>
+  <li>
+    <p>express 기본 template을 생성 (<span style="color:#7EBDCB">sudo 안쓸시 permission denied 뜰수 있음</span>)</p>
+
+    <p>$ sudo express -e</p>
+  </li>
+  <li>
+    <p>npm 설치</p>
+
+    <p>$  sudo npm install</p>
+  </li>
+  <li>
+    <p>app.js　수정</p>
+
+    <p>$ sudo vi app.js</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">app.js</code>　수정 내용</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">// port setup</span>
+     <span class="nx">app</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">port</span><span class="dl">'</span><span class="p">,</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="mi">9000</span><span class="p">);</span>
+
+     <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">app</span><span class="p">;</span>
+
+     <span class="kd">var</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">port</span><span class="dl">'</span><span class="p">),</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>  
+     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Express server listening on port </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">server</span><span class="p">.</span><span class="nx">address</span><span class="p">().</span><span class="nx">port</span><span class="p">);</span> 
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">package.json</code> 파일의 node 모니터링을 위해 <code class="language-plaintext highlighter-rouge">start</code> 항목 수정</p>
+
+    <p>$ sudo vi package.json</p>
+  </li>
+  <li>
+    <p>“start” 항목 수정 내용</p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"script"</span><span class="p">:{</span><span class="w">
+   </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodemon app.js"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>서버 실행</p>
+
+    <p>$ npm start</p>
+  </li>
+  <li>
+    <p>서버 백그라운드 실행 (ex. [1]1234 =&gt; process ID), ($ ps -ef =&gt; 프로세스 확인),(kill [processId] =&gt;프로세스 kill)</p>
+
+    <p>$ sudo nohup npm start &amp;</p>
+  </li>
+  <li>
+    <p>자동 redirection (포트를 입력하지 않고 넘길 수 있도록 하는 명령문)</p>
+
+    <p>$ sudo iptables -A PREROUTING -t nat -i eth0 -p tcp –dport 80 -j REDIRECT –to-port 9000</p>
+  </li>
+</ol>
+
+<ul>
+  <li>다른 참조 사이트
+    <ul>
+      <li><a href="https://blog-han.tistory.com/59?category=711525">EC2 VS code 리모트 방법1</a></li>
+      <li><a href="https://boot.tistory.com/21">EC2 VS code 리모트 방법2</a></li>
+      <li><a href="https://hoik92.github.io/aws/2019/06/03/AWS-EC2-Connect-Using-VSCode.html">EC2 VS code 리모트 방법3</a></li>
+      <li><a href="https://teddylee777.github.io/aws/visualstudiocode-%EC%97%90%EC%84%9C-aws-remote-%EC%97%B0%EA%B2%B0">EC2 VS code 리모트 방법4</a></li>
+      <li><a href="https://velog.io/@dysim361/%EC%9A%B0%EB%B6%84%ED%88%ACubunto-GitHub-%EC%97%B0%EB%8F%99-%EB%B0%8F-%EC%97%85%EB%A1%9C%EB%93%9C">우분투 깃허브 연동1</a></li>
+      <li><a href="https://uhou.tistory.com/99">우분투 깃허브 연동2</a></li>
+      <li><a href="https://loy124.tistory.com/199?category=768865">Mysql 서버 설치</a></li>
+    </ul>
+
+    <p><a href="#" class="btn btn--primary">맨위로👆</a></p>
+  </li>
+</ul>
+
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          
+          <a class="btn btn-primary float-right" href="/2021/02/15/github-vscode-ubuntu-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%83%E1%85%A9%E1%86%BC-%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2%E1%84%83%E1%85%B3%E1%86%AF.html" data-toggle="tooltip" data-placement="top" title="github-vscode-ubuntu 연동 오류들">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:jinhyuk0103@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/bangjinhyuk@naver,com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/bangjinhyuk">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://instagram.com/bbangi_98">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Bangjinhyuk 2021</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

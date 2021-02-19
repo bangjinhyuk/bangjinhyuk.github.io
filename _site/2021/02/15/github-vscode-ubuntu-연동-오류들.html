@@ -8,10 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>
-    BBangi Blog
+    github-vscode-ubuntu 연동 오류들 - BBangi Blog
+    
   </title>
 
-  <meta name="description" content="방진혁 개발 공부 블로그">
+  <meta name="description" content="AWS-Node.js 서버 구축하여 github-vscode-ubuntu 사용시 발생했던 오류들">
 
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -21,7 +22,7 @@
   <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://bangjinhyuk.github.io/">
+  <link rel="canonical" href="https://bangjinhyuk.github.io/2021/02/15/github-vscode-ubuntu-%EC%97%B0%EB%8F%99-%EC%98%A4%EB%A5%98%EB%93%A4.html">
   <link rel="alternate" type="application/rss+xml" title="BBangi Blog" href="/feed.xml">
 
 </head>
@@ -59,17 +60,24 @@
 
   <!-- Page Header -->
 
-<header class="masthead" style="background-image: url('/img/bg-index.jpg')">
+<header class="masthead" style="background-image: url('/img/posts/01.jpg')">
   
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>BBangi Blog</h1>
+          <div class="post-heading">
+            <h1>github-vscode-ubuntu 연동 오류들</h1>
             
-            <span class="subheading">방진혁 개발 공부 블로그</span>
+            <h2 class="subheading">AWS-Node.js 서버 구축 공부.</h2>
             
+            <span class="meta">Posted by
+              <a href="#">Bangjinhyuk</a>
+              on February 15, 2021 &middot; <span class="reading-time" title="Estimated read time">
+  
+   1 min  read </span>
+
+            </span>
           </div>
         </div>
       </div>
@@ -80,60 +88,52 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
 
-        
+        <h2 id="aws-nodejs-서버-구축하여-github-vscode-ubuntu-사용시-발생했던-오류들">AWS-Node.js 서버 구축하여 github-vscode-ubuntu 사용시 발생했던 오류들</h2>
 
-        <!-- Home Post List -->
-        
+<ol>
+  <li>vscode에서 ftp-simple을 사용하여 코드 수정시 Permission Denied가 뜰때
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ chown -R root:root (디렉토리 이름)
+ $ chmod -R 777 (디렉토리 이름)
+</code></pre></div>    </div>
+  </li>
+  <li>ubuntu에서 깃허브로 올리는 순서
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ sudo git init
+ $ git status
+ $ sudo git add -A : 모든 파일 추가
+ $ sudo git commit
+ $ sudo git commit -m "커밋 메세지 작성"
+ $ sudo git push origin +master(또는 main)
+ $ sudo git pull(저장소 업데이트)
+ $ git log
+</code></pre></div>    </div>
+  </li>
+  <li>error: Your local changes to the following files would be overwritten by merge: 와 같은 에러 발생시
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ git stash
+ $ sudo git pull(저장소 업데이트)
+</code></pre></div>    </div>
+    <ul>
+      <li>참조 사이트</li>
+    </ul>
+    <ul>
+      <li>[git pull 에러시] (https://steemit.com/develope/@snowsprout/git-git-pull-error-your-local-changes-to-the-following-files-would-be-overwritten-by-merge)</li>
+      <li>[ftp-simple 수정 권한 에러시] (https://share4share.tistory.com/32)</li>
+    </ul>
+  </li>
+</ol>
 
-        <article class="post-preview">
-          <a href="/2021/02/15/github-vscode-ubuntu-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%83%E1%85%A9%E1%86%BC-%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2%E1%84%83%E1%85%B3%E1%86%AF.html">
-            <h2 class="post-title">github-vscode-ubuntu 연동 오류들</h2>
-            
-            <h3 class="post-subtitle">AWS-Node.js 서버 구축 공부.</h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-            Bangjinhyuk
-            
-            on
-            February 15, 2021 &middot; <span class="reading-time" title="Estimated read time">
-  
-   1 min  read </span>
-            
-          </p>
-        </article>
+<p><a href="#" class="btn btn--primary">맨위로👆</a></p>
 
-        <hr>
-
-        
-
-        <article class="post-preview">
-          <a href="/2021/02/14/Node.js-%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5-%E1%84%80%E1%85%AE%E1%84%8E%E1%85%AE%E1%86%A8-1.html">
-            <h2 class="post-title">Node.js 서버 구축 1</h2>
-            
-            <h3 class="post-subtitle">AWS-Node.js 서버 구축 공부.</h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-            Bangjinhyuk
-            
-            on
-            February 14, 2021 &middot; <span class="reading-time" title="Estimated read time">
-  
-   2 mins  read </span>
-            
-          </p>
-        </article>
 
         <hr>
 
-        
-
-        <!-- Pager -->
         <div class="clearfix">
-          <a class="btn btn-primary float-right" href="/posts">View All Posts &rarr;</a>
+
+          
+          <a class="btn btn-primary float-left" href="/2021/02/14/Node.js-%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5-%E1%84%80%E1%85%AE%E1%84%8E%E1%85%AE%E1%86%A8-1.html" data-toggle="tooltip" data-placement="top" title="Node.js 서버 구축 1">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+
         </div>
 
       </div>

@@ -1,0 +1,51 @@
+I"�<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/kimbie.dark.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<h2 id="aws-서버-와-android-통신-참조">aws 서버 와 Android 통신 <a href="https://m.blog.naver.com/PostView.nhn?blogId=eyeballss&amp;logNo=221043096972&amp;proxyReferer=https:%2F%2Fwww.google.com%2F"><u>참조</u></a></h2>
+
+<ol>
+  <li>
+    <p>안드로이드 스튜디오 <code class="language-plaintext highlighter-rouge">AndroidManifest.xml</code> 설정</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.ACCESS_NETWORK_STATE"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;application</span>
+  <span class="err">...</span>
+  <span class="na">android:usesCleartextTraffic=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">build.gradle</code>에 Retrofit 추가</p>
+
+    <div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">implementation</span> <span class="s1">'com.squareup.retrofit2:retrofit:2.9.0'</span>
+ <span class="n">implementation</span> <span class="s1">'com.squareup.retrofit2:converter-gson:2.9.0'</span>
+ <span class="n">implementation</span> <span class="s2">"com.squareup.retrofit2:converter-scalars:2.9.0"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>서버와 통신할 메소드들이 담긴 인터페이스를 만들어 준다
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+
+ <span class="kn">import</span> <span class="nn">retrofit2.Call</span><span class="o">;</span>
+ <span class="kn">import</span> <span class="nn">retrofit2.http.GET</span><span class="o">;</span>
+ <span class="kn">import</span> <span class="nn">retrofit2.http.Query</span><span class="o">;</span>
+ <span class="kn">import</span> <span class="nn">retrofit2.http.QueryMap</span><span class="o">;</span>
+
+ <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OcrFactory</span> <span class="o">{</span>
+     <span class="nd">@GET</span><span class="o">(</span><span class="s">"ocr/connect"</span><span class="o">)</span> <span class="c1">// &lt;=요기 안에 들어가는게 서버 path</span>
+     <span class="nc">Call</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="nf">connect</span><span class="o">(</span><span class="nd">@Query</span><span class="o">(</span><span class="s">"userEmail"</span><span class="o">)</span> <span class="nc">String</span> <span class="n">email</span><span class="o">);</span>
+
+     <span class="nd">@GET</span><span class="o">(</span><span class="s">"ocr/connecting"</span><span class="o">)</span> <span class="c1">// &lt;=요기 안에 들어가는게 서버 path</span>
+     <span class="nc">Call</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="nf">connecting</span><span class="o">(</span><span class="nd">@QueryMap</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">success</span><span class="o">);</span>
+ <span class="o">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li>요 인터페이스에서 통신 부분에서 대부분의 메소드들을 다 넣을수록 깔끔</li>
+    </ul>
+  </li>
+  <li>하나의 서버와 통신을 담당하는 하나의 Singletone 클래스 만들기
+ ```java</li>
+</ol>
+
+<p><a href="#" class="btn btn--primary">맨위로👆</a></p>
+:ET

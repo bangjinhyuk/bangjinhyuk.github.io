@@ -13,7 +13,7 @@ background: '/img/posts/01.jpg'
     $ chmod -R 777 (디렉토리 이름)
     ```
     
-1. ubuntu에서 깃허브로 올리는 순서
+2. ubuntu에서 깃허브로 올리는 순서
     ```
     $ sudo git init
     $ git status

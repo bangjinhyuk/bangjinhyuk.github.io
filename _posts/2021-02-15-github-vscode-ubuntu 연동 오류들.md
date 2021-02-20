@@ -2,8 +2,10 @@
 layout: post
 title: "github-vscode-ubuntu 연동 오류들"
 subtitle: "AWS-Node.js 서버 구축 공부."
+categories: [server]
+tags: [Node.js, server, github, vscode, ubuntu]
 date: 2021-02-15 08:00:00
-background: '/img/posts/01.jpg'
+background: '/img/2.jpg'
 ---
 ## AWS-Node.js 서버 구축하여 github-vscode-ubuntu 사용시 발생했던 오류들
 

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://bangjinhyuk.github.io/2021/02/14/Node.js-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95-1.html</loc>
+<loc>https://bangjinhyuk.github.io/server/2021/02/14/Node.js-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95-1.html</loc>
 <lastmod>2021-02-14T17:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>https://bangjinhyuk.github.io/2021/02/15/github-vscode-ubuntu-%EC%97%B0%EB%8F%99-%EC%98%A4%EB%A5%98%EB%93%A4.html</loc>
+<loc>https://bangjinhyuk.github.io/server/2021/02/15/github-vscode-ubuntu-%EC%97%B0%EB%8F%99-%EC%98%A4%EB%A5%98%EB%93%A4.html</loc>
 <lastmod>2021-02-15T17:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>https://bangjinhyuk.github.io/2021/02/19/Node.js-%EC%84%9C%EB%B2%84-Android-%ED%86%B5%EC%8B%A0.html</loc>
+<loc>https://bangjinhyuk.github.io/server%20-%20android/2021/02/19/Node.js-%EC%84%9C%EB%B2%84-Android-%ED%86%B5%EC%8B%A0.html</loc>
 <lastmod>2021-02-19T17:00:00+09:00</lastmod>
 </url>
 <url>
@@ -37,6 +37,9 @@
 <loc>https://bangjinhyuk.github.io/about.html</loc>
 </url>
 <url>
+<loc>https://bangjinhyuk.github.io/category/</loc>
+</url>
+<url>
 <loc>https://bangjinhyuk.github.io/contact.html</loc>
 </url>
 <url>
@@ -44,5 +47,8 @@
 </url>
 <url>
 <loc>https://bangjinhyuk.github.io/posts/</loc>
+</url>
+<url>
+<loc>https://bangjinhyuk.github.io/tag/</loc>
 </url>
 </urlset>

@@ -30,10 +30,13 @@ background: '/img/bg-category.jpg'
       </small>
       <h4>
       <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title | escape }}</a>
+      
       </h4>
     </li>
     {% endif %}{% endfor %}
   </ul>
 </div>
 {% endunless %}{% endfor %}
+
+
 <!-- 참조글 - https://blog.devari.kr/2019/jekyll/jekyll-category-setting-->

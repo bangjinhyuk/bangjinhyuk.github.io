@@ -1,0 +1,18 @@
+-색상 넣기
+	<span style="color:#7EBDCB"> 내용</span>
+
+#7EBDCB 하늘색 #B45F04 갈색. https://html-color-codes.info/Korean/?
+
+-펼쳐보기 기능
+<details>
+  <summary>  <span style="color:#B45F04"> 코드 펼쳐보기 </span></summary>
+  <div markdown="1">
+    내용
+  </div>
+</details>
+
+-맨위로 
+[맨위로👆](#){: .btn .btn--primary }
+
+-한줄 띄기
+<br><br>

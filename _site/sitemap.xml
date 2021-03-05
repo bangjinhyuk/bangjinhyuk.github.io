@@ -1,54 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://bangjinhyuk.github.io/server/2021/02/14/Node.js-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95-1.html</loc>
-<lastmod>2021-02-14T17:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/server/2021/02/15/github-vscode-ubuntu-%EC%97%B0%EB%8F%99-%EC%98%A4%EB%A5%98%EB%93%A4.html</loc>
-<lastmod>2021-02-15T17:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/server%20-%20android/2021/02/19/Node.js-%EC%84%9C%EB%B2%84-Android-%ED%86%B5%EC%8B%A0.html</loc>
-<lastmod>2021-02-19T17:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/example/post%20%ED%8F%B4%EB%8D%94%20%EC%98%88%EC%8B%9C/2020-01-26-dinosaurs.html</loc>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/example/post%20%ED%8F%B4%EB%8D%94%20%EC%98%88%EC%8B%9C/2020-01-26-test.html</loc>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/example/post%20%ED%8F%B4%EB%8D%94%20%EC%98%88%EC%8B%9C/2020-01-27-dreams.html</loc>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/example/post%20%ED%8F%B4%EB%8D%94%20%EC%98%88%EC%8B%9C/2020-01-28-exploration.html</loc>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/example/post%20%ED%8F%B4%EB%8D%94%20%EC%98%88%EC%8B%9C/2020-01-29-prophecy.html</loc>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/example/post%20%ED%8F%B4%EB%8D%94%20%EC%98%88%EC%8B%9C/2020-01-30-heartbeats.html</loc>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/example/post%20%ED%8F%B4%EB%8D%94%20%EC%98%88%EC%8B%9C/2020-01-31-man-must-explore.html</loc>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/about.html</loc>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/category/</loc>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/contact.html</loc>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/</loc>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/posts/</loc>
-</url>
-<url>
-<loc>https://bangjinhyuk.github.io/tag/</loc>
-</url>
+  
+    <url>
+      <loc>https://bangjinhyuk.github.io/github/2021/03/05/git-%E1%84%90%E1%85%A2%E1%84%80%E1%85%B3-%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC.html</loc>
+      
+        <lastmod>2021-03-05T17:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://bangjinhyuk.github.io/server%20-%20android/2021/02/19/Node.js-%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5-%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB.html</loc>
+      
+        <lastmod>2021-02-19T17:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://bangjinhyuk.github.io/server%20-%20android/2021/02/19/Node.js-%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5-%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB-2.html</loc>
+      
+        <lastmod>2021-02-19T17:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://bangjinhyuk.github.io/server%20-%20android/2021/02/19/Node.js-%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5-Android-%E1%84%90%E1%85%A9%E1%86%BC%E1%84%89%E1%85%B5%E1%86%AB.html</loc>
+      
+        <lastmod>2021-02-19T17:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://bangjinhyuk.github.io/server/2021/02/15/github-vscode-ubuntu-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%83%E1%85%A9%E1%86%BC-%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2%E1%84%83%E1%85%B3%E1%86%AF.html</loc>
+      
+        <lastmod>2021-02-15T17:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://bangjinhyuk.github.io/server/2021/02/14/Node.js-%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5-%E1%84%80%E1%85%AE%E1%84%8E%E1%85%AE%E1%86%A8-1.html</loc>
+      
+        <lastmod>2021-02-14T17:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
 </urlset>

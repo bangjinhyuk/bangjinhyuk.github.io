@@ -3,7 +3,6 @@
 <html>
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -105,7 +104,7 @@
               <a href="#">Bangjinhyuk</a>
               on February 19, 2021 &middot; <span class="reading-time" title="Estimated read time">
   
-   18 mins  read </span>
+   17 mins  read </span>
 
             </span>
           </div>
@@ -178,55 +177,65 @@
     <p><span style="color:#7EBDCB">인터페이스에서 통신 부분에서 대부분의 메소드들을 다 넣을수록 깔끔. </span>
  <span style="color:#7EBDCB">또는 기능별로 나누어 인터페이스 분류 하기.  </span></p>
   </li>
-  <li>하나의 서버와 통신을 담당하는 하나의 Singletone 클래스 만들기
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kn">import</span> <span class="nn">com.google.gson.Gson</span><span class="o">;</span>
- <span class="kn">import</span> <span class="nn">com.google.gson.GsonBuilder</span><span class="o">;</span>
+  <li>
+    <p>하나의 서버와 통신을 담당하는 하나의 Singletone 클래스 만들기</p>
 
- <span class="kn">import</span> <span class="nn">okhttp3.OkHttpClient</span><span class="o">;</span>
- <span class="kn">import</span> <span class="nn">okhttp3.logging.HttpLoggingInterceptor</span><span class="o">;</span>
- <span class="kn">import</span> <span class="nn">retrofit2.Retrofit</span><span class="o">;</span>
- <span class="kn">import</span> <span class="nn">retrofit2.converter.gson.GsonConverterFactory</span><span class="o">;</span>
- <span class="kn">import</span> <span class="nn">retrofit2.converter.scalars.ScalarsConverterFactory</span><span class="o">;</span>
+    <details>
+ <summary>  <span style="color:#B45F04"> 코드 펼쳐보기 </span></summary>
+   <div>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   ```java
+   import com.google.gson.Gson;
+   import com.google.gson.GsonBuilder;
 
- <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Net</span> <span class="o">{</span>
-     <span class="kd">private</span> <span class="kd">static</span> <span class="nc">Net</span> <span class="n">ourinstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Net</span><span class="o">();</span>
+   import okhttp3.OkHttpClient;
+   import okhttp3.logging.HttpLoggingInterceptor;
+   import retrofit2.Retrofit;
+   import retrofit2.converter.gson.GsonConverterFactory;
+   import retrofit2.converter.scalars.ScalarsConverterFactory;
 
-     <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Net</span> <span class="nf">getInstance</span><span class="o">(){</span>
-         <span class="k">return</span> <span class="n">ourinstance</span><span class="o">;</span>
-     <span class="o">}</span>
+   public class Net {
+       private static Net ourinstance = new Net();
 
-     <span class="nc">Gson</span> <span class="n">gson</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GsonBuilder</span><span class="o">().</span><span class="na">setLenient</span><span class="o">().</span><span class="na">create</span><span class="o">();</span>
-     <span class="kd">private</span> <span class="nf">Net</span><span class="o">(){</span>
-     <span class="o">}</span>
-     <span class="nc">OkHttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">OkHttpClient</span><span class="o">.</span><span class="na">Builder</span><span class="o">().</span><span class="na">addInterceptor</span><span class="o">(</span><span class="n">httpLoggingInterceptor</span><span class="o">()).</span><span class="na">build</span><span class="o">();</span>
+       public static Net getInstance(){
+           return ourinstance;
+       }
 
-     <span class="kd">private</span> <span class="nc">Retrofit</span> <span class="n">retrofit</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Retrofit</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
-             <span class="o">.</span><span class="na">baseUrl</span><span class="o">(</span><span class="s">""</span><span class="o">)</span> <span class="c1">//&lt;= 서버 주소값 입력</span>
-             <span class="o">.</span><span class="na">client</span><span class="o">(</span><span class="n">client</span><span class="o">)</span> <span class="c1">//&lt;= OkHttpClient 연동</span>
-             <span class="o">.</span><span class="na">addConverterFactory</span><span class="o">(</span><span class="nc">ScalarsConverterFactory</span><span class="o">.</span><span class="na">create</span><span class="o">())</span> <span class="c1">//&lt;= 고질적인 에러 :JSON document was not fully consumed 해결</span>
-             <span class="o">.</span><span class="na">addConverterFactory</span><span class="o">(</span><span class="nc">GsonConverterFactory</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">gson</span><span class="o">))</span>
-             <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-     <span class="nc">OcrFactory</span> <span class="n">ocrFactory</span><span class="o">;</span>
+       Gson gson = new GsonBuilder().setLenient().create();
+       private Net(){
+       }
+       OkHttpClient client = new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor()).build();
 
-     <span class="kd">public</span> <span class="nc">OcrFactory</span> <span class="nf">getOcrFactory</span><span class="o">(){</span>
-         <span class="k">if</span><span class="o">(</span><span class="n">ocrFactory</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
-             <span class="n">ocrFactory</span> <span class="o">=</span> <span class="n">retrofit</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="nc">OcrFactory</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-         <span class="o">}</span>
-         <span class="k">return</span> <span class="n">ocrFactory</span><span class="o">;</span>
-     <span class="o">}</span>
-     <span class="kd">private</span> <span class="nc">HttpLoggingInterceptor</span> <span class="nf">httpLoggingInterceptor</span><span class="o">(){</span>
+       private Retrofit retrofit = new Retrofit.Builder()
+               .baseUrl("") //&lt;= 서버 주소값 입력
+               .client(client) //&lt;= OkHttpClient 연동
+               .addConverterFactory(ScalarsConverterFactory.create()) //&lt;= 고질적인 에러 :JSON document was not fully consumed 해결
+               .addConverterFactory(GsonConverterFactory.create(gson))
+               .build();
+       OcrFactory ocrFactory;
 
-         <span class="nc">HttpLoggingInterceptor</span> <span class="n">interceptor</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HttpLoggingInterceptor</span><span class="o">(</span><span class="k">new</span> <span class="nc">HttpLoggingInterceptor</span><span class="o">.</span><span class="na">Logger</span><span class="o">()</span> <span class="o">{</span>
-             <span class="nd">@Override</span>
-             <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="nc">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-                 <span class="n">android</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"MyLogis :"</span><span class="o">,</span> <span class="n">message</span> <span class="o">+</span> <span class="s">""</span><span class="o">);</span>
-             <span class="o">}</span>
-         <span class="o">});</span>
+       public OcrFactory getOcrFactory(){
+           if(ocrFactory == null){
+               ocrFactory = retrofit.create(OcrFactory.class);
+           }
+           return ocrFactory;
+       }
+       private HttpLoggingInterceptor httpLoggingInterceptor(){
 
-         <span class="k">return</span> <span class="n">interceptor</span><span class="o">.</span><span class="na">setLevel</span><span class="o">(</span><span class="nc">HttpLoggingInterceptor</span><span class="o">.</span><span class="na">Level</span><span class="o">.</span><span class="na">BODY</span><span class="o">);</span>
-     <span class="o">}</span>
- <span class="o">}</span>
-</code></pre></div>    </div>
+           HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+               @Override
+               public void log(String message) {
+                   android.util.Log.e("MyLogis :", message + "");
+               }
+           });
+
+           return interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+       }
+   }
+   ```
+</code></pre></div>        </div>
+      </div>
+ </details>
+
     <ul>
       <li><a href="https://stackoverflow.com/questions/42386250/android-retrofit-2-0-json-document-was-not-fully-consumed">.addConverterFactory(ScalarsConverterFactory.create()</a></li>
       <li>한 클래스로 하나의 레트로핏 객체를 만들기 때문에 프로젝트 전체에서 이 객체만 사용</li>
@@ -234,94 +243,103 @@
       <li>OkHttpClient 를 통해 HTTP 요청/응답에 대한 상세한 내용 확인 가능</li>
     </ul>
   </li>
-  <li>학기 시간표 데이터를 담는 Semester 클래스 작성
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Semester</span> <span class="o">{</span>
-     <span class="kd">private</span> <span class="nc">String</span> <span class="n">major1</span><span class="o">,</span><span class="n">major2</span><span class="o">;</span>
-     <span class="kd">private</span> <span class="nc">String</span> <span class="nc">Class1</span><span class="o">,</span><span class="nc">Class2</span><span class="o">,</span><span class="nc">Class3</span><span class="o">,</span><span class="nc">Class4</span><span class="o">,</span><span class="nc">Class5</span><span class="o">;</span>
+  <li>
+    <p>학기 시간표 데이터를 담는 Semester 클래스 작성</p>
+
+    <details>
+   <summary>  <span style="color:#B45F04"> 코드 펼쳐보기 </span></summary>
+   <div>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Semester</span> <span class="o">{</span>
+       <span class="kd">private</span> <span class="nc">String</span> <span class="n">major1</span><span class="o">,</span><span class="n">major2</span><span class="o">;</span>
+       <span class="kd">private</span> <span class="nc">String</span> <span class="nc">Class1</span><span class="o">,</span><span class="nc">Class2</span><span class="o">,</span><span class="nc">Class3</span><span class="o">,</span><span class="nc">Class4</span><span class="o">,</span><span class="nc">Class5</span><span class="o">;</span>
 
 
-     <span class="kd">public</span> <span class="nf">Semester</span><span class="o">(){</span>
-     <span class="o">}</span>
+       <span class="kd">public</span> <span class="nf">Semester</span><span class="o">(){</span>
+       <span class="o">}</span>
 
-     <span class="nd">@Override</span>
-     <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">(){</span>
-         <span class="k">return</span>  <span class="s">"semester{"</span> <span class="o">+</span>
-                 <span class="s">"major1='"</span> <span class="o">+</span> <span class="n">major1</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
-                 <span class="s">", major2="</span> <span class="o">+</span> <span class="n">major2</span> <span class="o">+</span>
-                 <span class="s">", Class1='"</span> <span class="o">+</span> <span class="nc">Class1</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
-                 <span class="s">", Class2='"</span> <span class="o">+</span> <span class="nc">Class2</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
-                 <span class="s">", Class3='"</span> <span class="o">+</span> <span class="nc">Class3</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
-                 <span class="s">", Class4='"</span> <span class="o">+</span> <span class="nc">Class4</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
-                 <span class="s">", Class5='"</span> <span class="o">+</span> <span class="nc">Class5</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
-                 <span class="sc">'}'</span><span class="o">;</span>
-     <span class="o">}</span>
-     <span class="kd">public</span> <span class="nf">Semester</span><span class="o">(</span><span class="nc">String</span> <span class="n">major1</span><span class="o">,</span> <span class="nc">String</span> <span class="n">major2</span><span class="o">,</span> <span class="nc">String</span> <span class="nc">Class1</span><span class="o">,</span> <span class="nc">String</span> <span class="nc">Class2</span><span class="o">,</span> <span class="nc">String</span> <span class="nc">Class3</span><span class="o">,</span> <span class="nc">String</span> <span class="nc">Class4</span><span class="o">,</span> <span class="nc">String</span> <span class="nc">Class5</span><span class="o">){</span>
-         <span class="k">this</span><span class="o">.</span><span class="na">major1</span><span class="o">=</span> <span class="n">major1</span><span class="o">;</span>
-         <span class="k">this</span><span class="o">.</span><span class="na">major2</span> <span class="o">=</span> <span class="n">major2</span><span class="o">;</span>
-         <span class="k">this</span><span class="o">.</span><span class="na">Class1</span> <span class="o">=</span> <span class="nc">Class1</span><span class="o">;</span>
-         <span class="k">this</span><span class="o">.</span><span class="na">Class2</span> <span class="o">=</span> <span class="nc">Class2</span><span class="o">;</span>
-         <span class="k">this</span><span class="o">.</span><span class="na">Class3</span> <span class="o">=</span> <span class="nc">Class3</span><span class="o">;</span>
-         <span class="k">this</span><span class="o">.</span><span class="na">Class4</span> <span class="o">=</span> <span class="nc">Class4</span><span class="o">;</span>
-         <span class="k">this</span><span class="o">.</span><span class="na">Class5</span> <span class="o">=</span> <span class="nc">Class5</span><span class="o">;</span>
-     <span class="o">}</span>
+       <span class="nd">@Override</span>
+       <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">(){</span>
+           <span class="k">return</span>  <span class="s">"semester{"</span> <span class="o">+</span>
+                   <span class="s">"major1='"</span> <span class="o">+</span> <span class="n">major1</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
+                   <span class="s">", major2="</span> <span class="o">+</span> <span class="n">major2</span> <span class="o">+</span>
+                   <span class="s">", Class1='"</span> <span class="o">+</span> <span class="nc">Class1</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
+                   <span class="s">", Class2='"</span> <span class="o">+</span> <span class="nc">Class2</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
+                   <span class="s">", Class3='"</span> <span class="o">+</span> <span class="nc">Class3</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
+                   <span class="s">", Class4='"</span> <span class="o">+</span> <span class="nc">Class4</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
+                   <span class="s">", Class5='"</span> <span class="o">+</span> <span class="nc">Class5</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
+                   <span class="sc">'}'</span><span class="o">;</span>
+       <span class="o">}</span>
+       <span class="kd">public</span> <span class="nf">Semester</span><span class="o">(</span><span class="nc">String</span> <span class="n">major1</span><span class="o">,</span> <span class="nc">String</span> <span class="n">major2</span><span class="o">,</span> <span class="nc">String</span> <span class="nc">Class1</span><span class="o">,</span> <span class="nc">String</span> <span class="nc">Class2</span><span class="o">,</span> <span class="nc">String</span> <span class="nc">Class3</span><span class="o">,</span> <span class="nc">String</span> <span class="nc">Class4</span><span class="o">,</span> <span class="nc">String</span> <span class="nc">Class5</span><span class="o">){</span>
+           <span class="k">this</span><span class="o">.</span><span class="na">major1</span><span class="o">=</span> <span class="n">major1</span><span class="o">;</span>
+           <span class="k">this</span><span class="o">.</span><span class="na">major2</span> <span class="o">=</span> <span class="n">major2</span><span class="o">;</span>
+           <span class="k">this</span><span class="o">.</span><span class="na">Class1</span> <span class="o">=</span> <span class="nc">Class1</span><span class="o">;</span>
+           <span class="k">this</span><span class="o">.</span><span class="na">Class2</span> <span class="o">=</span> <span class="nc">Class2</span><span class="o">;</span>
+           <span class="k">this</span><span class="o">.</span><span class="na">Class3</span> <span class="o">=</span> <span class="nc">Class3</span><span class="o">;</span>
+           <span class="k">this</span><span class="o">.</span><span class="na">Class4</span> <span class="o">=</span> <span class="nc">Class4</span><span class="o">;</span>
+           <span class="k">this</span><span class="o">.</span><span class="na">Class5</span> <span class="o">=</span> <span class="nc">Class5</span><span class="o">;</span>
+       <span class="o">}</span>
 
-     <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getClass1</span><span class="o">()</span> <span class="o">{</span>
-         <span class="k">return</span> <span class="nc">Class1</span><span class="o">;</span>
-     <span class="o">}</span>
+       <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getClass1</span><span class="o">()</span> <span class="o">{</span>
+           <span class="k">return</span> <span class="nc">Class1</span><span class="o">;</span>
+       <span class="o">}</span>
 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setClass1</span><span class="o">(</span><span class="nc">String</span> <span class="n">class1</span><span class="o">)</span> <span class="o">{</span>
-         <span class="nc">Class1</span> <span class="o">=</span> <span class="n">class1</span><span class="o">;</span>
-     <span class="o">}</span>
+       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setClass1</span><span class="o">(</span><span class="nc">String</span> <span class="n">class1</span><span class="o">)</span> <span class="o">{</span>
+           <span class="nc">Class1</span> <span class="o">=</span> <span class="n">class1</span><span class="o">;</span>
+       <span class="o">}</span>
 
-     <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getClass2</span><span class="o">()</span> <span class="o">{</span>
-         <span class="k">return</span> <span class="nc">Class2</span><span class="o">;</span>
-     <span class="o">}</span>
+       <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getClass2</span><span class="o">()</span> <span class="o">{</span>
+           <span class="k">return</span> <span class="nc">Class2</span><span class="o">;</span>
+       <span class="o">}</span>
 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setClass2</span><span class="o">(</span><span class="nc">String</span> <span class="n">class2</span><span class="o">)</span> <span class="o">{</span>
-         <span class="nc">Class2</span> <span class="o">=</span> <span class="n">class2</span><span class="o">;</span>
-     <span class="o">}</span>
+       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setClass2</span><span class="o">(</span><span class="nc">String</span> <span class="n">class2</span><span class="o">)</span> <span class="o">{</span>
+           <span class="nc">Class2</span> <span class="o">=</span> <span class="n">class2</span><span class="o">;</span>
+       <span class="o">}</span>
 
-     <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getClass3</span><span class="o">()</span> <span class="o">{</span>
-         <span class="k">return</span> <span class="nc">Class3</span><span class="o">;</span>
-     <span class="o">}</span>
+       <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getClass3</span><span class="o">()</span> <span class="o">{</span>
+           <span class="k">return</span> <span class="nc">Class3</span><span class="o">;</span>
+       <span class="o">}</span>
 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setClass3</span><span class="o">(</span><span class="nc">String</span> <span class="n">class3</span><span class="o">)</span> <span class="o">{</span>
-         <span class="nc">Class3</span> <span class="o">=</span> <span class="n">class3</span><span class="o">;</span>
-     <span class="o">}</span>
+       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setClass3</span><span class="o">(</span><span class="nc">String</span> <span class="n">class3</span><span class="o">)</span> <span class="o">{</span>
+           <span class="nc">Class3</span> <span class="o">=</span> <span class="n">class3</span><span class="o">;</span>
+       <span class="o">}</span>
 
-     <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getClass4</span><span class="o">()</span> <span class="o">{</span>
-         <span class="k">return</span> <span class="nc">Class4</span><span class="o">;</span>
-     <span class="o">}</span>
+       <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getClass4</span><span class="o">()</span> <span class="o">{</span>
+           <span class="k">return</span> <span class="nc">Class4</span><span class="o">;</span>
+       <span class="o">}</span>
 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setClass4</span><span class="o">(</span><span class="nc">String</span> <span class="n">class4</span><span class="o">)</span> <span class="o">{</span>
-         <span class="nc">Class4</span> <span class="o">=</span> <span class="n">class4</span><span class="o">;</span>
-     <span class="o">}</span>
+       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setClass4</span><span class="o">(</span><span class="nc">String</span> <span class="n">class4</span><span class="o">)</span> <span class="o">{</span>
+           <span class="nc">Class4</span> <span class="o">=</span> <span class="n">class4</span><span class="o">;</span>
+       <span class="o">}</span>
 
-     <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getClass5</span><span class="o">()</span> <span class="o">{</span>
-         <span class="k">return</span> <span class="nc">Class5</span><span class="o">;</span>
-     <span class="o">}</span>
+       <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getClass5</span><span class="o">()</span> <span class="o">{</span>
+           <span class="k">return</span> <span class="nc">Class5</span><span class="o">;</span>
+       <span class="o">}</span>
 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setClass5</span><span class="o">(</span><span class="nc">String</span> <span class="n">class5</span><span class="o">)</span> <span class="o">{</span>
-         <span class="nc">Class5</span> <span class="o">=</span> <span class="n">class5</span><span class="o">;</span>
-     <span class="o">}</span>
+       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setClass5</span><span class="o">(</span><span class="nc">String</span> <span class="n">class5</span><span class="o">)</span> <span class="o">{</span>
+           <span class="nc">Class5</span> <span class="o">=</span> <span class="n">class5</span><span class="o">;</span>
+       <span class="o">}</span>
 
-     <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getMajor1</span><span class="o">()</span> <span class="o">{</span>
-         <span class="k">return</span> <span class="n">major1</span><span class="o">;</span>
-     <span class="o">}</span>
+       <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getMajor1</span><span class="o">()</span> <span class="o">{</span>
+           <span class="k">return</span> <span class="n">major1</span><span class="o">;</span>
+       <span class="o">}</span>
 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMajor1</span><span class="o">(</span><span class="nc">String</span> <span class="n">major1</span><span class="o">)</span> <span class="o">{</span>
-         <span class="k">this</span><span class="o">.</span><span class="na">major1</span> <span class="o">=</span> <span class="n">major1</span><span class="o">;</span>
-     <span class="o">}</span>
+       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMajor1</span><span class="o">(</span><span class="nc">String</span> <span class="n">major1</span><span class="o">)</span> <span class="o">{</span>
+           <span class="k">this</span><span class="o">.</span><span class="na">major1</span> <span class="o">=</span> <span class="n">major1</span><span class="o">;</span>
+       <span class="o">}</span>
 
-     <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getMajor2</span><span class="o">()</span> <span class="o">{</span>
-         <span class="k">return</span> <span class="n">major2</span><span class="o">;</span>
-     <span class="o">}</span>
+       <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getMajor2</span><span class="o">()</span> <span class="o">{</span>
+           <span class="k">return</span> <span class="n">major2</span><span class="o">;</span>
+       <span class="o">}</span>
 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMajor2</span><span class="o">(</span><span class="nc">String</span> <span class="n">major2</span><span class="o">)</span> <span class="o">{</span>
-         <span class="k">this</span><span class="o">.</span><span class="na">major2</span> <span class="o">=</span> <span class="n">major2</span><span class="o">;</span>
-     <span class="o">}</span>
- <span class="o">}</span>
-</code></pre></div>    </div>
+       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMajor2</span><span class="o">(</span><span class="nc">String</span> <span class="n">major2</span><span class="o">)</span> <span class="o">{</span>
+           <span class="k">this</span><span class="o">.</span><span class="na">major2</span> <span class="o">=</span> <span class="n">major2</span><span class="o">;</span>
+       <span class="o">}</span>
+   <span class="o">}</span>
+</code></pre></div>        </div>
+      </div>
+ </details>
+    <p><span style="color:#7EBDCB"><a href="http://pojo.sodhanalibrary.com/">pojo 사이트</a>를 통해 빠르게 만들수 있다 </span></p>
   </li>
   <li>액티비티에서 Retrofit 사용방법
     <ol>
@@ -455,62 +473,68 @@
     </ol>
 
     <ul>
-      <li>서버에서 올바른 값이 왔을때 response.isSuccessful() 는 참</li>
+      <li>서버에서 올바른 값이 왔을때 response.isSuccessful() 는 참 <br /><br /></li>
     </ul>
   </li>
   <li>서버쪽  <code class="language-plaintext highlighter-rouge">ocr.js</code> 파일 작성
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">);</span>
- <span class="kd">var</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span>
+    <details>
+   <summary>  <span style="color:#B45F04"> 코드 펼쳐보기 </span></summary>
+   <div>
+
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span>
 
 
- <span class="cm">/* GET ocr listing. */</span>
- <span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/connect</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
-   <span class="k">if</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">userEmail</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">bangjinhyuk</span><span class="dl">'</span><span class="p">){</span>
-     <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">connect all sucess</span><span class="dl">'</span><span class="p">);</span>
-   <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-     <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">connect little sucess</span><span class="dl">'</span><span class="p">);</span>
-   <span class="p">}</span>
-      
- <span class="p">});</span>
-
- <span class="cm">/* GET ocr listing. */</span>
- <span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/connecting</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
-   <span class="k">if</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">bbangi</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">birth</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">0103</span><span class="dl">'</span><span class="p">){</span>
-     <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span>
-         <span class="p">{</span><span class="dl">"</span><span class="s2">major1</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">소웨</span><span class="dl">"</span><span class="p">,</span> 
-         <span class="dl">"</span><span class="s2">major2</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">미디어</span><span class="dl">"</span><span class="p">,</span> 
-         <span class="dl">"</span><span class="s2">Class1</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span>
-         <span class="dl">"</span><span class="s2">Class2</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">2</span><span class="dl">"</span><span class="p">,</span>
-         <span class="dl">"</span><span class="s2">Class3</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">3</span><span class="dl">"</span><span class="p">,</span>
-         <span class="dl">"</span><span class="s2">Class4</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">4</span><span class="dl">"</span><span class="p">,</span>
-         <span class="dl">"</span><span class="s2">Class5</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">5</span><span class="dl">"</span><span class="p">}));</span>
-   <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-     <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">connecting little sucess</span><span class="dl">'</span><span class="p">);</span>
-   <span class="p">}</span>
-      
- <span class="p">});</span>
-
- <span class="cm">/* GET ocr listing. */</span>
- <span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/semester</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">{"code":-1, "msg": "failed"}</span><span class="dl">'</span><span class="p">);</span>
-   <span class="c1">// if(req.body.semester == 'bbangi' &amp;&amp; req.query.birth == '0103' ){</span>
-   <span class="c1">//   res.send('connecting all sucess');</span>
-   <span class="c1">// }else{</span>
-   <span class="c1">//   res.send('connecting little sucess');</span>
-   <span class="c1">// }</span>
-      
- <span class="p">});</span>
-
- <span class="cm">/* GET ocr listing. */</span>
- <span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
-   <span class="c1">// res.send(req.body.userEmail);</span>
-      
-     <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">connect</span><span class="dl">'</span><span class="p">);</span>
+   <span class="cm">/* GET ocr listing. */</span>
+   <span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/connect</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">if</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">userEmail</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">bangjinhyuk</span><span class="dl">'</span><span class="p">){</span>
+       <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">connect all sucess</span><span class="dl">'</span><span class="p">);</span>
+     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+       <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">connect little sucess</span><span class="dl">'</span><span class="p">);</span>
+     <span class="p">}</span>
+        
    <span class="p">});</span>
 
+   <span class="cm">/* GET ocr listing. */</span>
+   <span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/connecting</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">if</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">bbangi</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">birth</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">0103</span><span class="dl">'</span><span class="p">){</span>
+       <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span>
+           <span class="p">{</span><span class="dl">"</span><span class="s2">major1</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">소웨</span><span class="dl">"</span><span class="p">,</span> 
+           <span class="dl">"</span><span class="s2">major2</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">미디어</span><span class="dl">"</span><span class="p">,</span> 
+           <span class="dl">"</span><span class="s2">Class1</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span>
+           <span class="dl">"</span><span class="s2">Class2</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">2</span><span class="dl">"</span><span class="p">,</span>
+           <span class="dl">"</span><span class="s2">Class3</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">3</span><span class="dl">"</span><span class="p">,</span>
+           <span class="dl">"</span><span class="s2">Class4</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">4</span><span class="dl">"</span><span class="p">,</span>
+           <span class="dl">"</span><span class="s2">Class5</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">5</span><span class="dl">"</span><span class="p">}));</span>
+     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+       <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">connecting little sucess</span><span class="dl">'</span><span class="p">);</span>
+     <span class="p">}</span>
+        
+   <span class="p">});</span>
 
- <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">router</span><span class="p">;</span>
-</code></pre></div>    </div>
+   <span class="cm">/* GET ocr listing. */</span>
+   <span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/semester</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+     <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">{"code":-1, "msg": "failed"}</span><span class="dl">'</span><span class="p">);</span>
+     <span class="c1">// if(req.body.semester == 'bbangi' &amp;&amp; req.query.birth == '0103' ){</span>
+     <span class="c1">//   res.send('connecting all sucess');</span>
+     <span class="c1">// }else{</span>
+     <span class="c1">//   res.send('connecting little sucess');</span>
+     <span class="c1">// }</span>
+        
+   <span class="p">});</span>
+
+   <span class="cm">/* GET ocr listing. */</span>
+   <span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+     <span class="c1">// res.send(req.body.userEmail);</span>
+        
+       <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">connect</span><span class="dl">'</span><span class="p">);</span>
+     <span class="p">});</span>
+
+
+   <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">router</span><span class="p">;</span>
+</code></pre></div>        </div>
+      </div>
+ </details>
   </li>
 </ol>
 
@@ -542,6 +566,9 @@
           <a class="btn btn-primary float-left" href="/server/2021/02/15/github-vscode-ubuntu-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%83%E1%85%A9%E1%86%BC-%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2%E1%84%83%E1%85%B3%E1%86%AF.html" data-toggle="tooltip" data-placement="top" title="github-vscode-ubuntu 연동 오류들">&larr; Previous<span class="d-none d-md-inline">
               Post</span></a>
           
+          
+          <a class="btn btn-primary float-right" href="/server%20-%20android/2021/02/19/Node.js-%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5-%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB-2.html" data-toggle="tooltip" data-placement="top" title="Node.js 서버 Android 통신(Retrofit)">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
           
 
         </div>

@@ -1,0 +1,34 @@
+I"�<h2 id="git-태그기능-참조">git 태그기능 <a href="https://dololak.tistory.com/348"><u>참조</u></a></h2>
+<h4 id="git-태그-기능으로-버전-릴리즈-하기">git 태그 기능으로 버전 릴리즈 하기</h4>
+
+<ol>
+  <li>
+    <p>깃 태그 확인</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ git tag
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>깃 태그 올리기</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ git push origin v0.1.0-내용
+</code></pre></div>    </div>
+  </li>
+  <li>깃 버전 제거
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ git push origin :v0.1.0-내용
+</code></pre></div>    </div>
+  </li>
+  <li>깃 버전 로컬 제거
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ git  tag -d  v0.1.0-내용
+</code></pre></div>    </div>
+  </li>
+  <li>깃 로그 확인 (여기서 태그 확인 가능)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ Git log —oneline
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h4 id="깃-명령어는-항상-공부-하기">깃 명령어는 항상 공부 하기!</h4>
+
+<p><a href="#" class="btn btn--primary">맨위로👆</a></p>
+:ET

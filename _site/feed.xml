@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://bangjinhyuk.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bangjinhyuk.github.io/" rel="alternate" type="text/html" /><updated>2021-03-16T19:39:40+09:00</updated><id>https://bangjinhyuk.github.io/feed.xml</id><title type="html">BBangi Blog🗂</title><subtitle>방진혁 개발 공부 블로그</subtitle><author><name>Bangjinhyuk</name></author><entry><title type="html">Database, DBMS 정의</title><link href="https://bangjinhyuk.github.io/database/2021/03/15/Database-Intro.html" rel="alternate" type="text/html" title="Database, DBMS 정의" /><published>2021-03-15T17:00:00+09:00</published><updated>2021-03-15T17:00:00+09:00</updated><id>https://bangjinhyuk.github.io/database/2021/03/15/Database%20Intro</id><content type="html" xml:base="https://bangjinhyuk.github.io/database/2021/03/15/Database-Intro.html">&lt;h1 id=&quot;database&quot;&gt;Database&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://bangjinhyuk.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bangjinhyuk.github.io/" rel="alternate" type="text/html" /><updated>2021-03-16T22:58:02+09:00</updated><id>https://bangjinhyuk.github.io/feed.xml</id><title type="html">BBangi Blog🗂</title><subtitle>방진혁 개발 공부 블로그</subtitle><author><name>Bangjinhyuk</name></author><entry><title type="html">Querying Relational Databases</title><link href="https://bangjinhyuk.github.io/database/2021/03/16/Querying-Relational-Databases.html" rel="alternate" type="text/html" title="Querying Relational Databases" /><published>2021-03-16T17:00:00+09:00</published><updated>2021-03-16T17:00:00+09:00</updated><id>https://bangjinhyuk.github.io/database/2021/03/16/Querying%20Relational%20Databases</id><content type="html" xml:base="https://bangjinhyuk.github.io/database/2021/03/16/Querying-Relational-Databases.html">&lt;h1 id=&quot;database&quot;&gt;Database&lt;/h1&gt;
+
+&lt;h4 id=&quot;querying-relational-databases&quot;&gt;Querying Relational Databases&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;relational databases를 만들고 사용하는 단계
+    &lt;ol&gt;
+      &lt;li&gt;schema를 design 한다.(create table) =&amp;gt; DDL을 사용한다.&lt;/li&gt;
+      &lt;li&gt;대용량 데이터들을 넣는다.&lt;/li&gt;
+      &lt;li&gt;queries와 modifications를 반복한다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;queries는 relations(테이블들)을 반환한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Query languages 종류
+    &lt;ul&gt;
+      &lt;li&gt;Relational Algebre =&amp;gt; SQL이 나오기 전에 이론적인 쿼리 언어&lt;/li&gt;
+      &lt;li&gt;SQL =&amp;gt; 실질적이고 구현되는 쿼리 언어&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;맨위로👆&lt;/a&gt;&lt;/p&gt;</content><author><name>Bangjinhyuk</name></author><category term="Database" /><category term="Ajou" /><summary type="html">Database</summary></entry><entry><title type="html">Database, DBMS 정의</title><link href="https://bangjinhyuk.github.io/database/2021/03/15/Database-Intro.html" rel="alternate" type="text/html" title="Database, DBMS 정의" /><published>2021-03-15T17:00:00+09:00</published><updated>2021-03-15T17:00:00+09:00</updated><id>https://bangjinhyuk.github.io/database/2021/03/15/Database%20Intro</id><content type="html" xml:base="https://bangjinhyuk.github.io/database/2021/03/15/Database-Intro.html">&lt;h1 id=&quot;database&quot;&gt;Database&lt;/h1&gt;
 
 &lt;h5 id=&quot;dbms---database-management-system&quot;&gt;DBMS  = Database Management System&lt;/h5&gt;
 &lt;ol&gt;

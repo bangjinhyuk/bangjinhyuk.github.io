@@ -8,12 +8,12 @@
 
   
   <title>
-    Category - BBangi Blog🗂
+    Querying Relational Databases - BBangi Blog🗂
     
   </title>
 
   
-  <meta name="description" content="방진혁 개발 공부 블로그">
+  <meta name="description" content="Database">
 
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://bangjinhyuk.github.io/category/">
+  <link rel="canonical" href="https://bangjinhyuk.github.io/database/2021/03/16/Querying-Relational-Databases.html">
   <link rel="alternate" type="application/rss+xml" title="BBangi Blog🗂" href="/feed.xml">
 
 </head>
@@ -65,15 +65,40 @@
 
   <!-- Page Header -->
 
-<header class="masthead" style="background-image: url('/img/bg-category.jpg')">
+<header class="masthead" style="background-image: url('/img/7.jpg')">
   
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>Category</h1>
+          <div class="post-heading">
+<!--              카테고리,테마-->
+              <div><i class="fa fa-folder-open"></i>
+                
+                
+                <a href="/category/#Database">  <span style="color:#FFFFFF">Database</span></a>
+                
+              </div>
+              <div><i class="fa fa-tags"></i>
+                
+                
+                <a href="/tag/#Ajou">  <span style="color:#FFFFFF">Ajou</span></a>
+                
+              </div>
+    
+    
+
+            <h1>Querying Relational Databases</h1>
             
+            <h2 class="subheading">아주대학교 데이터 베이스 수업.</h2>
+            
+            <span class="meta">Posted by
+              <a href="#">Bangjinhyuk</a>
+              on March 16, 2021 &middot; <span class="reading-time" title="Estimated read time">
+  
+   1 min  read </span>
+
+            </span>
           </div>
         </div>
       </div>
@@ -82,143 +107,48 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="col-lg-11 col-md-11 mx-auto">
+<!--          md 코드 테마-->
+          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/kimbie.dark.min.css"> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script> <script>hljs.initHighlightingOnLoad();</script>
+             
 
-        
+        <h1 id="database">Database</h1>
 
-<h2><span style="color:#2E9AFE">List</span></h2>
-<ul>
-    
-    
-    <li><a href="#Database" class="tag"><span class="term">Database</span><span class="count">(3)</span></a></li>
-    
-    
-    <li><a href="#github" class="tag"><span class="term">github</span><span class="count">(1)</span></a></li>
-    
-    
-    <li><a href="#server" class="tag"><span class="term">server</span><span class="count">(2)</span></a></li>
-    
-    
-    <li><a href="#server - Android" class="tag"><span class="term">server - Android</span><span class="count">(1)</span></a></li>
-    
-  </ul>
+<h4 id="querying-relational-databases">Querying Relational Databases</h4>
 
-  <h2><span style="color:#2E9AFE">Posts by list</span></h2>
-  
-  
-  <div style="margin-bottom: 30px;">
-  <div id="Database"></div>
-  <h4><span style="color:#81BEF7">Database</span></h4>
-  <hr>
-  <ul>
-    
-    <li>
-      <small>
-        Mar 16, 2021
-      </small>
-      <h4>
-      <a href="https://bangjinhyuk.github.io/database/2021/03/16/Querying-Relational-Databases.html">Querying Relational Databases</a>
-      
-      </h4>
-    </li>
-    
-    <li>
-      <small>
-        Mar 15, 2021
-      </small>
-      <h4>
-      <a href="https://bangjinhyuk.github.io/database/2021/03/15/Database-Relational-Model.html">Database Relational Model</a>
-      
-      </h4>
-    </li>
-    
-    <li>
-      <small>
-        Mar 15, 2021
-      </small>
-      <h4>
-      <a href="https://bangjinhyuk.github.io/database/2021/03/15/Database-Intro.html">Database, DBMS 정의</a>
-      
-      </h4>
-    </li>
-    
-  </ul>
-</div>
+<ol>
+  <li>relational databases를 만들고 사용하는 단계
+    <ol>
+      <li>schema를 design 한다.(create table) =&gt; DDL을 사용한다.</li>
+      <li>대용량 데이터들을 넣는다.</li>
+      <li>queries와 modifications를 반복한다.</li>
+    </ol>
+  </li>
+  <li>
+    <p>queries는 relations(테이블들)을 반환한다.</p>
+  </li>
+  <li>Query languages 종류
+    <ul>
+      <li>Relational Algebre =&gt; SQL이 나오기 전에 이론적인 쿼리 언어</li>
+      <li>SQL =&gt; 실질적이고 구현되는 쿼리 언어</li>
+    </ul>
+  </li>
+</ol>
 
-  
-  <div style="margin-bottom: 30px;">
-  <div id="github"></div>
-  <h4><span style="color:#81BEF7">github</span></h4>
-  <hr>
-  <ul>
-    
-    <li>
-      <small>
-        Mar 5, 2021
-      </small>
-      <h4>
-      <a href="https://bangjinhyuk.github.io/github/2021/03/05/git-tag.html">git 태그 기능</a>
-      
-      </h4>
-    </li>
-    
-  </ul>
-</div>
-
-  
-  <div style="margin-bottom: 30px;">
-  <div id="server"></div>
-  <h4><span style="color:#81BEF7">server</span></h4>
-  <hr>
-  <ul>
-    
-    <li>
-      <small>
-        Feb 15, 2021
-      </small>
-      <h4>
-      <a href="https://bangjinhyuk.github.io/server/2021/02/15/github-vscode-ubuntu-error.html">github-vscode-ubuntu 연동 오류들</a>
-      
-      </h4>
-    </li>
-    
-    <li>
-      <small>
-        Feb 14, 2021
-      </small>
-      <h4>
-      <a href="https://bangjinhyuk.github.io/server/2021/02/14/Node.js-server1.html">Node.js 서버 구축 1</a>
-      
-      </h4>
-    </li>
-    
-  </ul>
-</div>
-
-  
-  <div style="margin-bottom: 30px;">
-  <div id="server - Android"></div>
-  <h4><span style="color:#81BEF7">server - Android</span></h4>
-  <hr>
-  <ul>
-    
-    <li>
-      <small>
-        Feb 19, 2021
-      </small>
-      <h4>
-      <a href="https://bangjinhyuk.github.io/server%20-%20android/2021/02/19/Node.js-Android.html">Node.js 서버 Android 통신(Retrofit)</a>
-      
-      </h4>
-    </li>
-    
-  </ul>
-</div>
+<p><a href="#" class="btn btn--primary">맨위로👆</a></p>
 
 
+        <hr>
 
-<!-- 참조글 - https://blog.devari.kr/2019/jekyll/jekyll-category-setting-->
+        <div class="clearfix">
 
+          
+          <a class="btn btn-primary float-left" href="/database/2021/03/15/Database-Relational-Model.html" data-toggle="tooltip" data-placement="top" title="Database Relational Model">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+
+        </div>
 
       </div>
     </div>

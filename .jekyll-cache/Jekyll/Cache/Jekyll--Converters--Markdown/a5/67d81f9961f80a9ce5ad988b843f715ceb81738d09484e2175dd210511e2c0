@@ -1,0 +1,25 @@
+I"�<h1 id="database">Database</h1>
+
+<h4 id="querying-relational-databases">Querying Relational Databases</h4>
+
+<ol>
+  <li>relational databases를 만들고 사용하는 단계
+    <ol>
+      <li>schema를 design 한다.(create table) =&gt; DDL을 사용한다.</li>
+      <li>대용량 데이터들을 넣는다.</li>
+      <li>queries와 modifications를 반복한다.</li>
+    </ol>
+  </li>
+  <li>
+    <p>queries는 relations(테이블들)을 반환한다.</p>
+  </li>
+  <li>Query languages 종류
+    <ul>
+      <li>Relational Algebre =&gt; SQL이 나오기 전에 이론적인 쿼리 언어</li>
+      <li>SQL =&gt; 실질적이고 구현되는 쿼리 언어</li>
+    </ul>
+  </li>
+</ol>
+
+<p><a href="#" class="btn btn--primary">맨위로👆</a></p>
+:ET

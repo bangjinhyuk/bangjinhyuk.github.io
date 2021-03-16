@@ -31,9 +31,10 @@ background: '/img/5.jpg'
 6. Key concepts
     + Data model (데이터를 어떻게 구성하는지 정한 모델, 구성 요소 정의 ex) table , set of records, XML, graph)
     + Schema versus data
-        * schema = 데이터 베이스 안에 구성요소들의 구조 =>type ![스키마](./img/schema그림.jpg)
+        * schema = 데이터 베이스 안에 구성요소들의 구조 =>type
+            <img src="/img/schema.jpg"  width="400" height="370">
         * 해당 위의 사진에서 내부 스키마 부분
-        * data (variables 실제 데이터들)
+        * data => variables 실제 데이터들
     + Data definition language(DDL) => 스키마 정의 부분 ex) create
     + Data manipulation or query language (DML) => 데이터 read(quering)/write(modifying) 쿼리문들
 

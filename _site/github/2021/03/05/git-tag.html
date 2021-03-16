@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  <title>
+    git 태그 기능 - BBangi Blog🗂
+    
+  </title>
+
+  
+  <meta name="description" content="git 태그기능 참조 git 태그 기능으로 버전 릴리즈 하기">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://bangjinhyuk.github.io/github/2021/03/05/git-tag.html">
+  <link rel="alternate" type="application/rss+xml" title="BBangi Blog🗂" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">BBangi Blog🗂</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/category">Category</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tag">Tag</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+<header class="masthead" style="background-image: url('/img/4.jpg')">
+  
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+<!--              카테고리,테마-->
+              <div><i class="fa fa-folder-open"></i>
+                
+                
+                <a href="/category/#github">  <span style="color:#FFFFFF">github</span></a>
+                
+              </div>
+              <div><i class="fa fa-tags"></i>
+                
+                
+                <a href="/tag/#github">  <span style="color:#FFFFFF">github</span></a>
+                
+              </div>
+    
+    
+
+            <h1>git 태그 기능</h1>
+            
+            <h2 class="subheading">git 공부</h2>
+            
+            <span class="meta">Posted by
+              <a href="#">Bangjinhyuk</a>
+              on March 05, 2021 &middot; <span class="reading-time" title="Estimated read time">
+  
+   1 min  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-11 col-md-11 mx-auto">
+<!--          md 코드 테마-->
+          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/kimbie.dark.min.css"> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script> <script>hljs.initHighlightingOnLoad();</script>
+             
+
+        <h2 id="git-태그기능-참조">git 태그기능 <a href="https://dololak.tistory.com/348"><u>참조</u></a></h2>
+<h4 id="git-태그-기능으로-버전-릴리즈-하기">git 태그 기능으로 버전 릴리즈 하기</h4>
+
+<ol>
+  <li>
+    <p>깃 태그 확인</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ git tag
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>깃 태그 올리기</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ git push origin v0.1.0-내용
+</code></pre></div>    </div>
+  </li>
+  <li>깃 버전 제거
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ git push origin :v0.1.0-내용
+</code></pre></div>    </div>
+  </li>
+  <li>깃 버전 로컬 제거
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ git  tag -d  v0.1.0-내용
+</code></pre></div>    </div>
+  </li>
+  <li>깃 로그 확인 (여기서 태그 확인 가능)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ Git log —oneline
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h4 id="깃-명령어는-항상-공부-하기">깃 명령어는 항상 공부 하기!</h4>
+
+<p><a href="#" class="btn btn--primary">맨위로👆</a></p>
+
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/server%20-%20android/2021/02/19/Node.js-111.html" data-toggle="tooltip" data-placement="top" title="Node.js 서버 Android 통신(Retrofit)">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/database/2021/03/15/Database-Intro.html" data-toggle="tooltip" data-placement="top" title="데이터 베이스, DBMS 정의">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:jinhyuk0103@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/profile.php?id=100001548378047">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/bangjinhyuk">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://instagram.com/bbangi_98">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Bangjinhyuk 2021</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

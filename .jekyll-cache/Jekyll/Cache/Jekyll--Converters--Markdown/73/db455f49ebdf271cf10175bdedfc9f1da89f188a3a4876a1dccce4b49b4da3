@@ -1,0 +1,52 @@
+I",<h1 id="database">Database</h1>
+
+<h5 id="dbms---database-management-system">DBMS  = Database Management System</h5>
+<ol>
+  <li>
+    <p>DBMS 종류: 상용버전(오라클,MS) , 오픈소스 (MySQL, PostgreSQL,SQLite)</p>
+  </li>
+  <li>
+    <p>DBMS를 통해서 데이터 베이스에 저장하고 접속(read/write)할수 있게 해준다.</p>
+  </li>
+  <li>DataBase 특징
+    <ul>
+      <li>Massive (큰사이즈의 데이터를 다룬다)</li>
+      <li>Persistent (한번 저장되면 지우기 전까지 저장)</li>
+      <li>Safe (안전하다)</li>
+      <li>Multi-user(동시 공유=&gt;concurrent sharing)</li>
+      <li>Convenient (복잡하지 않다. high-level query language, physical data independence=&gt;table 개념 )</li>
+      <li>Efficient (처리속도가 높다)</li>
+      <li>Reliable (안정적)</li>
+    </ul>
+  </li>
+  <li>
+    <p>Database 어플리케이션은 framework를 통해 프로그래밍 된다.</p>
+  </li>
+  <li>
+    <p>데이터 중심 어플리케이션(Data-intensive applications)는 DBMS를 사용하지 않는다.</p>
+  </li>
+  <li>Key concepts
+    <ul>
+      <li>Data model (데이터를 어떻게 구성하는지 정한 모델, 구성 요소 정의 ex) table , set of records, XML, graph)</li>
+      <li>Schema versus data
+        <ul>
+          <li>schema = 데이터 베이스 안에 구성요소들의 구조 =&gt;type <img src="./img/schema그림.jpg" alt="스키마" /></li>
+          <li>해당 위의 사진에서 내부 스키마 부분</li>
+          <li>data (variables 실제 데이터들)</li>
+        </ul>
+      </li>
+      <li>Data definition language(DDL) =&gt; 스키마 정의 부분 ex) create</li>
+      <li>Data manipulation or query language (DML) =&gt; 데이터 read(quering)/write(modifying) 쿼리문들</li>
+    </ul>
+  </li>
+  <li>Key people
+    <ul>
+      <li>DBMS implementer (DBMS를 만드는 사람들)</li>
+      <li>Database designer (스키마 디자이너)</li>
+      <li>Database application developer()</li>
+    </ul>
+  </li>
+</ol>
+
+<p><a href="#" class="btn btn--primary">맨위로👆</a></p>
+:ET

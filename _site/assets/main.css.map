@@ -3,17 +3,17 @@
 	"file": "main.css",
 	"sources": [
 		"main.scss",
-		"_sass/styles.scss",
-		"assets/vendor/startbootstrap-clean-blog/scss/clean-blog.scss",
-		"assets/vendor/startbootstrap-clean-blog/scss/_variables.scss",
-		"assets/vendor/startbootstrap-clean-blog/scss/_mixins.scss",
-		"assets/vendor/startbootstrap-clean-blog/scss/_global.scss",
-		"assets/vendor/startbootstrap-clean-blog/scss/_navbar.scss",
-		"assets/vendor/startbootstrap-clean-blog/scss/_masthead.scss",
-		"assets/vendor/startbootstrap-clean-blog/scss/_post.scss",
-		"assets/vendor/startbootstrap-clean-blog/scss/_contact.scss",
-		"assets/vendor/startbootstrap-clean-blog/scss/_footer.scss",
-		"assets/vendor/startbootstrap-clean-blog/scss/_bootstrap-overrides.scss"
+		"../../../개발/Git/bangjinhyuk.github.io/_sass/styles.scss",
+		"../../../개발/Git/bangjinhyuk.github.io/assets/vendor/startbootstrap-clean-blog/scss/clean-blog.scss",
+		"../../../개발/Git/bangjinhyuk.github.io/assets/vendor/startbootstrap-clean-blog/scss/_variables.scss",
+		"../../../개발/Git/bangjinhyuk.github.io/assets/vendor/startbootstrap-clean-blog/scss/_mixins.scss",
+		"../../../개발/Git/bangjinhyuk.github.io/assets/vendor/startbootstrap-clean-blog/scss/_global.scss",
+		"../../../개발/Git/bangjinhyuk.github.io/assets/vendor/startbootstrap-clean-blog/scss/_navbar.scss",
+		"../../../개발/Git/bangjinhyuk.github.io/assets/vendor/startbootstrap-clean-blog/scss/_masthead.scss",
+		"../../../개발/Git/bangjinhyuk.github.io/assets/vendor/startbootstrap-clean-blog/scss/_post.scss",
+		"../../../개발/Git/bangjinhyuk.github.io/assets/vendor/startbootstrap-clean-blog/scss/_contact.scss",
+		"../../../개발/Git/bangjinhyuk.github.io/assets/vendor/startbootstrap-clean-blog/scss/_footer.scss",
+		"../../../개발/Git/bangjinhyuk.github.io/assets/vendor/startbootstrap-clean-blog/scss/_bootstrap-overrides.scss"
 	],
 	"sourcesContent": [
 		"@import \"styles\";\n",

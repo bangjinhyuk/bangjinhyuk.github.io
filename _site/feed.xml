@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://bangjinhyuk.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bangjinhyuk.github.io/" rel="alternate" type="text/html" /><updated>2021-03-16T22:58:02+09:00</updated><id>https://bangjinhyuk.github.io/feed.xml</id><title type="html">BBangi Blog🗂</title><subtitle>방진혁 개발 공부 블로그</subtitle><author><name>Bangjinhyuk</name></author><entry><title type="html">Querying Relational Databases</title><link href="https://bangjinhyuk.github.io/database/2021/03/16/Querying-Relational-Databases.html" rel="alternate" type="text/html" title="Querying Relational Databases" /><published>2021-03-16T17:00:00+09:00</published><updated>2021-03-16T17:00:00+09:00</updated><id>https://bangjinhyuk.github.io/database/2021/03/16/Querying%20Relational%20Databases</id><content type="html" xml:base="https://bangjinhyuk.github.io/database/2021/03/16/Querying-Relational-Databases.html">&lt;h1 id=&quot;database&quot;&gt;Database&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://bangjinhyuk.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bangjinhyuk.github.io/" rel="alternate" type="text/html" /><updated>2021-03-17T01:41:19+09:00</updated><id>https://bangjinhyuk.github.io/feed.xml</id><title type="html">BBangi Blog🗂</title><subtitle>방진혁 개발 공부 블로그</subtitle><author><name>Bangjinhyuk</name></author><entry><title type="html">Querying Relational Databases</title><link href="https://bangjinhyuk.github.io/database/2021/03/16/Querying-Relational-Databases.html" rel="alternate" type="text/html" title="Querying Relational Databases" /><published>2021-03-16T17:00:00+09:00</published><updated>2021-03-16T17:00:00+09:00</updated><id>https://bangjinhyuk.github.io/database/2021/03/16/Querying%20Relational%20Databases</id><content type="html" xml:base="https://bangjinhyuk.github.io/database/2021/03/16/Querying-Relational-Databases.html">&lt;h1 id=&quot;database&quot;&gt;Database&lt;/h1&gt;
 
 &lt;h4 id=&quot;querying-relational-databases&quot;&gt;Querying Relational Databases&lt;/h4&gt;
 
@@ -17,6 +17,155 @@
     &lt;ul&gt;
       &lt;li&gt;Relational Algebre =&amp;gt; SQL이 나오기 전에 이론적인 쿼리 언어&lt;/li&gt;
       &lt;li&gt;SQL =&amp;gt; 실질적이고 구현되는 쿼리 언어&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;맨위로👆&lt;/a&gt;&lt;/p&gt;</content><author><name>Bangjinhyuk</name></author><category term="Database" /><category term="Ajou" /><summary type="html">Database</summary></entry><entry><title type="html">Relational Algebra</title><link href="https://bangjinhyuk.github.io/database/2021/03/16/Relational-Algebra.html" rel="alternate" type="text/html" title="Relational Algebra" /><published>2021-03-16T17:00:00+09:00</published><updated>2021-03-16T17:00:00+09:00</updated><id>https://bangjinhyuk.github.io/database/2021/03/16/Relational%20Algebra</id><content type="html" xml:base="https://bangjinhyuk.github.io/database/2021/03/16/Relational-Algebra.html">&lt;h1 id=&quot;database&quot;&gt;Database&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;헷갈리는거 행 - Row- 가로 /  열 - Column - 세로&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;relational-algebra-쿼리들&quot;&gt;Relational Algebra 쿼리들&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;relation name =&amp;gt;  순수 테이블 이름도 쿼리이다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Select operator
+    &lt;ul&gt;
+      &lt;li&gt;한테이블 내에서 튜플들을 찾는 쿼리&lt;/li&gt;
+      &lt;li&gt;예시 =&amp;gt;
+      &lt;img src=&quot;/img/algebra_select.jpeg&quot; width=&quot;400&quot; height=&quot;370&quot; /&gt;
+        &lt;ul&gt;
+          &lt;li&gt;r 테이블에서 A = B 이고 D &amp;gt; 5인 튜플을 찾아라&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Project operator
+    &lt;ul&gt;
+      &lt;li&gt;열을 찾는 쿼리&lt;/li&gt;
+      &lt;li&gt;중복된 행이 있으면 제거 &lt;중요 no=&quot;&quot; duplicate=&quot;&quot;&gt;&lt;/중요&gt;&lt;/li&gt;
+      &lt;li&gt;예시 =&amp;gt;
+      &lt;img src=&quot;/img/algebra_project.jpeg&quot; width=&quot;400&quot; height=&quot;370&quot; /&gt;
+        &lt;ul&gt;
+          &lt;li&gt;r 테이블에서 A와 C속성을 추출해라&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Select+Project 혼합 연산
+    &lt;ul&gt;
+      &lt;li&gt;Select 먼저 한뒤에 Project&lt;/li&gt;
+      &lt;li&gt;예시 =&amp;gt;
+  &lt;img src=&quot;/img/algebra_select_project.gif&quot; width=&quot;400&quot; height=&quot;40&quot; /&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Employee 테이블(relation)안에 EmpNo = 2106 인 Rows 중에서 EmpName, Title Columns를 보여줘라&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Cross-product (cartesian product)
+    &lt;ul&gt;
+      &lt;li&gt;두 테이블을 합치는것&lt;/li&gt;
+      &lt;li&gt;두 데이블의 tuple 개수의 곱만큼 tuple 이 생성 m*n&lt;/li&gt;
+      &lt;li&gt;예시 =&amp;gt;
+  &lt;img src=&quot;/img/algebra_cross_product.jpeg&quot; width=&quot;400&quot; height=&quot;370&quot; /&gt;
+        &lt;ul&gt;
+          &lt;li&gt;릴레이션 r과 s를 크로스 프로덕트해라.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;예시 =&amp;gt;
+  &lt;img src=&quot;/img/algebra_cross_product_2.jpg&quot; width=&quot;400&quot; height=&quot;370&quot; /&gt;
+        &lt;ul&gt;
+          &lt;li&gt;크로스 프로덕트한 릴레이션에서 속성 A와 C가 같은 튜플을 선택해라.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Natural Join
+    &lt;ul&gt;
+      &lt;li&gt;두개의 relations&lt;/li&gt;
+      &lt;li&gt;같은 이름의 attribute가 존재해야 한다.&lt;/li&gt;
+      &lt;li&gt;중복된 attributes는 제거&lt;/li&gt;
+      &lt;li&gt;Cross-product에 같은 속성의 같은 값을 찾는 조건을 추가한것과 같음(밑에 예시 보기)&lt;/li&gt;
+      &lt;li&gt;예시 =&amp;gt;
+  &lt;img src=&quot;/img/algebra_natural_join.png&quot; width=&quot;400&quot; height=&quot;370&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Theta Join
+    &lt;ul&gt;
+      &lt;li&gt;cross product를 수행하고, selection을 수행한다.&lt;/li&gt;
+      &lt;li&gt;Natural join은 Theta join의 특별한 한 예이다.&lt;/li&gt;
+      &lt;li&gt;수식 =&amp;gt;
+  &lt;img src=&quot;/img/algebra_theta_join.png&quot; width=&quot;400&quot; height=&quot;40&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;요약&quot;&gt;요약&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;쿼리의 결과는 relation 이다.&lt;/li&gt;
+  &lt;li&gt;가장 간단한 쿼리=&amp;gt; relation name&lt;/li&gt;
+  &lt;li&gt;filter =&amp;gt; select&lt;/li&gt;
+  &lt;li&gt;slice =&amp;gt; project&lt;/li&gt;
+  &lt;li&gt;combine =&amp;gt; cross-product, natural join, theta join&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://chokyuhwan.tistory.com/15&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;맨위로👆&lt;/a&gt;&lt;/p&gt;</content><author><name>Bangjinhyuk</name></author><category term="Database" /><category term="Ajou" /><summary type="html">Database 헷갈리는거 행 - Row- 가로 / 열 - Column - 세로</summary></entry><entry><title type="html">Database Relational Model</title><link href="https://bangjinhyuk.github.io/database/2021/03/15/Database-Relational-Model.html" rel="alternate" type="text/html" title="Database Relational Model" /><published>2021-03-15T17:00:00+09:00</published><updated>2021-03-15T17:00:00+09:00</updated><id>https://bangjinhyuk.github.io/database/2021/03/15/Database%20Relational%20Model</id><content type="html" xml:base="https://bangjinhyuk.github.io/database/2021/03/15/Database-Relational-Model.html">&lt;h1 id=&quot;database&quot;&gt;Database&lt;/h1&gt;
+
+&lt;h4 id=&quot;relational-model&quot;&gt;Relational Model&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;특징
+    &lt;ul&gt;
+      &lt;li&gt;major commercial database system에 주로 사용&lt;/li&gt;
+      &lt;li&gt;매우 단순한 모델 (table)&lt;/li&gt;
+      &lt;li&gt;Query with high-level languages =&amp;gt; read(retrieve)/write(modify)&lt;/li&gt;
+      &lt;li&gt;효율적이다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Schema
+    &lt;ul&gt;
+      &lt;li&gt;tabel (relations)의 구성 성분 ex) 테이블명 ,테이블에서 columns&lt;/li&gt;
+      &lt;li&gt;Relational Model 에서는 attribute(columns)라 불림&lt;/li&gt;
+      &lt;li&gt;각각의 attribute들은 type(domain)을 가짐&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Instance
+    &lt;ul&gt;
+      &lt;li&gt;data들&lt;/li&gt;
+      &lt;li&gt;Relational Model 에서는 tuple(row)라고 불림&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;NULL (두가지 경우)
+    &lt;ul&gt;
+      &lt;li&gt;“unknown” 아직 없다.&lt;/li&gt;
+      &lt;li&gt;“undefined” 정의되어있지 않다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Key
+    &lt;ul&gt;
+      &lt;li&gt;각각의 tuple에서 고유한 값&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;create relations in SQL&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;Create&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Table&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Studen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GPA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;photo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;Create&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Table&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;College&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enrollment&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
@@ -69,58 +218,6 @@
       &lt;li&gt;Database designer (스키마 디자이너)&lt;/li&gt;
       &lt;li&gt;Database application developer(어플리케이션을 개발하는 사람=&amp;gt; 흔히 말하는 서버 개발자)&lt;/li&gt;
       &lt;li&gt;Database administer (데이터 베이스 관리자)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;맨위로👆&lt;/a&gt;&lt;/p&gt;</content><author><name>Bangjinhyuk</name></author><category term="Database" /><category term="Ajou" /><summary type="html">Database</summary></entry><entry><title type="html">Database Relational Model</title><link href="https://bangjinhyuk.github.io/database/2021/03/15/Database-Relational-Model.html" rel="alternate" type="text/html" title="Database Relational Model" /><published>2021-03-15T17:00:00+09:00</published><updated>2021-03-15T17:00:00+09:00</updated><id>https://bangjinhyuk.github.io/database/2021/03/15/Database%20Relational%20Model</id><content type="html" xml:base="https://bangjinhyuk.github.io/database/2021/03/15/Database-Relational-Model.html">&lt;h1 id=&quot;database&quot;&gt;Database&lt;/h1&gt;
-
-&lt;h4 id=&quot;relational-model&quot;&gt;Relational Model&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;특징
-    &lt;ul&gt;
-      &lt;li&gt;major commercial database system에 주로 사용&lt;/li&gt;
-      &lt;li&gt;매우 단순한 모델 (table)&lt;/li&gt;
-      &lt;li&gt;Query with high-level languages =&amp;gt; read(retrieve)/write(modify)&lt;/li&gt;
-      &lt;li&gt;효율적이다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Schema
-    &lt;ul&gt;
-      &lt;li&gt;tabel (relations)의 구성 성분 ex) 테이블명 ,테이블에서 columns&lt;/li&gt;
-      &lt;li&gt;Relational Model 에서는 attribute(columns)라 불림&lt;/li&gt;
-      &lt;li&gt;각각의 attribute들은 type(domain)을 가짐&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Instance
-    &lt;ul&gt;
-      &lt;li&gt;data들&lt;/li&gt;
-      &lt;li&gt;Relational Model 에서는 tuple(row)라고 불림&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;NULL (두가지 경우)
-    &lt;ul&gt;
-      &lt;li&gt;“unknown” 아직 없다.&lt;/li&gt;
-      &lt;li&gt;“undefined” 정의되어있지 않다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Key
-    &lt;ul&gt;
-      &lt;li&gt;각각의 tuple에서 고유한 값&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;create relations in SQL&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;Create&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Table&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Studen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GPA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;photo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;Create&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Table&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;College&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enrollment&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;

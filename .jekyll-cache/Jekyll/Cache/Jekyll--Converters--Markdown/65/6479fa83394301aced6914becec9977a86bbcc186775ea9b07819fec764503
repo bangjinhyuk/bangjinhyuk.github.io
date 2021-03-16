@@ -1,0 +1,29 @@
+I"�<h1 id="database">Database</h1>
+
+<h4 id="relational-model">Relational Model</h4>
+<ol>
+  <li>
+    <p>특징</p>
+
+    <ul>
+      <li>major commercial database system에 주로 사용</li>
+      <li>매우 단순한 모델 (table)</li>
+      <li>Query with high-level languages =&gt; read(retrieve)/write(modify)</li>
+      <li>효율적이다.</li>
+    </ul>
+  </li>
+  <li>Schema
+    <ul>
+      <li>tabel (relations)의 구성 성분 ex) 테이블명 ,테이블에서 columns</li>
+    </ul>
+  </li>
+  <li>Instance
+    <ul>
+      <li>data들</li>
+    </ul>
+  </li>
+  <li>구성요소</li>
+</ol>
+
+<p><a href="#" class="btn btn--primary">맨위로👆</a></p>
+:ET

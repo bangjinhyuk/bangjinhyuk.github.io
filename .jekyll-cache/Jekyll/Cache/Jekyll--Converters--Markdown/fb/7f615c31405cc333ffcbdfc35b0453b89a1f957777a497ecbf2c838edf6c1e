@@ -1,4 +1,4 @@
-I"�<h1 id="database">Database</h1>
+I"�<h1 id="database">Database</h1>
 
 <h5 id="dbms---database-management-system">DBMS  = Database Management System</h5>
 <ol>
@@ -31,9 +31,8 @@
       <li>Schema versus data
         <ul>
           <li>schema = 데이터 베이스 안에 구성요소들의 구조 =&gt;type</li>
-          <li>ㅑ<img src="./img/5.jpg" alt="스키마" /></li>
           <li>해당 위의 사진에서 내부 스키마 부분</li>
-          <li>data (variables 실제 데이터들)</li>
+          <li>data =&gt; variables 실제 데이터들</li>
         </ul>
       </li>
       <li>Data definition language(DDL) =&gt; 스키마 정의 부분 ex) create</li>

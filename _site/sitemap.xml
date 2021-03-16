@@ -2,6 +2,21 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
+      <loc>https://bangjinhyuk.github.io/database/2021/03/15/Database-Relational-Model.html</loc>
+      
+        <lastmod>2021-03-15T17:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
       <loc>https://bangjinhyuk.github.io/database/2021/03/15/Database-Intro.html</loc>
       
         <lastmod>2021-03-15T17:00:00+09:00</lastmod>
@@ -20,21 +35,6 @@
       <loc>https://bangjinhyuk.github.io/github/2021/03/05/git-tag.html</loc>
       
         <lastmod>2021-03-05T17:00:00+09:00</lastmod>
-      
-
-      
-        <changefreq>weekly</changefreq>
-      
-
-      
-          <priority>0.5</priority>
-      
-    </url>
-  
-    <url>
-      <loc>https://bangjinhyuk.github.io/server%20-%20android/2021/02/19/Node.js-111.html</loc>
-      
-        <lastmod>2021-02-19T17:00:00+09:00</lastmod>
       
 
       

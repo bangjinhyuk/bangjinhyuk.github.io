@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "데이터 베이스, DBMS 정의"
-subtitle: "아주대학교 수업"
+title: "Database, DBMS 정의"
+subtitle: "아주대학교 데이터 베이스 수업"
 categories: [Database]
 tags: [Ajou]
 date: 2021-03-15 08:00:00

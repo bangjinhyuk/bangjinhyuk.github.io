@@ -17,4 +17,8 @@
 -한줄 띄기
 <br><br>
 
+테스트 실행
+jekyll serve --force_polling
 
+이미지
+<img src="/img/schema.jpg"  width="400" height="370">

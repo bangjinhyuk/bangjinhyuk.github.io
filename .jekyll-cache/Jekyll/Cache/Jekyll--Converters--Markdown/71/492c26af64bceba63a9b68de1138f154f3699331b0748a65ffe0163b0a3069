@@ -1,0 +1,63 @@
+I"h%<h1 id="안드로이드-edittext-날짜-점-자동-입력하는-법">안드로이드 Edittext 날짜 점(.) 자동 입력하는 법</h1>
+
+<h3 id="edittext에-날짜-입력시-날짜-형식에-맞추어-점-생성하는-법-ex-20200101처럼">Edittext에 날짜 입력시 날짜 형식에 맞추어 점(.) 생성하는 법 ex) 2020.01.01처럼..</h3>
+<ol>
+  <li>xml파일 Edittext 부분에 다음과 같이 추가
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> android:hint="ex) 2021.01.01"
+ android:inputType="number"
+ android:maxLength="10"
+</code></pre></div>    </div>
+  </li>
+  <li>java 파일
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">addTextChangedListener</span><span class="o">(</span><span class="k">new</span> <span class="nc">TextWatcher</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">beforeTextChanged</span><span class="o">(</span><span class="nc">CharSequence</span> <span class="n">s</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">,</span> <span class="kt">int</span> <span class="n">count</span><span class="o">,</span> <span class="kt">int</span> <span class="n">after</span><span class="o">)</span> <span class="o">{</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onTextChanged</span><span class="o">(</span><span class="nc">CharSequence</span> <span class="n">s</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">,</span> <span class="kt">int</span> <span class="n">before</span><span class="o">,</span> <span class="kt">int</span> <span class="n">count</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">isFocusable</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">s</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">try</span><span class="o">{</span>
+                <span class="n">textlength</span> <span class="o">=</span> <span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">length</span><span class="o">();</span>
+            <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="nc">NumberFormatException</span> <span class="n">e</span><span class="o">){</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                <span class="k">return</span><span class="o">;</span>
+            <span class="o">}</span>
+
+            <span class="k">if</span> <span class="o">(</span><span class="n">textlength</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="n">before</span> <span class="o">!=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                
+                <span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">et_spec_content_2</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">()+</span><span class="s">"."</span><span class="o">);</span>
+                <span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">setSelection</span><span class="o">(</span><span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">length</span><span class="o">());</span>
+                    
+            <span class="o">}</span><span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">textlength</span> <span class="o">==</span> <span class="mi">7</span><span class="o">&amp;&amp;</span> <span class="n">before</span> <span class="o">!=</span> <span class="mi">1</span><span class="o">){</span>
+                
+                <span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">et_spec_content_2</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">()+</span><span class="s">"."</span><span class="o">);</span>
+                <span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">setSelection</span><span class="o">(</span><span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">length</span><span class="o">());</span>
+                    
+            <span class="o">}</span><span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">textlength</span> <span class="o">==</span> <span class="mi">5</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">contains</span><span class="o">(</span><span class="s">"."</span><span class="o">)){</span>
+                
+                <span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">4</span><span class="o">)+</span><span class="s">"."</span><span class="o">+</span><span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">substring</span><span class="o">(</span><span class="mi">4</span><span class="o">));</span>
+                <span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">setSelection</span><span class="o">(</span><span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">length</span><span class="o">());</span>
+                    
+            <span class="o">}</span><span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">textlength</span> <span class="o">==</span> <span class="mi">8</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">substring</span><span class="o">(</span><span class="mi">7</span><span class="o">,</span><span class="mi">8</span><span class="o">).</span><span class="na">equals</span><span class="o">(</span><span class="s">"."</span><span class="o">)){</span>
+                
+                <span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">7</span><span class="o">)+</span><span class="s">"."</span><span class="o">+</span><span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">substring</span><span class="o">(</span><span class="mi">7</span><span class="o">));</span>
+                <span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">setSelection</span><span class="o">(</span><span class="nc">Edittext변수명</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">length</span><span class="o">());</span>
+                    
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">afterTextChanged</span><span class="o">(</span><span class="nc">Editable</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="o">}</span>
+<span class="o">});</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><a href="#" class="btn btn--primary">맨위로👆</a></p>
+:ET

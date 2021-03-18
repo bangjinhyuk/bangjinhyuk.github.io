@@ -1,0 +1,48 @@
+I"	<h1 id="안드로이드-edittext-날짜-점-자동-입력">안드로이드 Edittext 날짜 점(.) 자동 입력</h1>
+
+<h3 id="날짜-입력시-날짜-형식에-맞추어-점-생성하는-법">날짜 입력시 날짜 형식에 맞추어 점(.) 생성하는 법</h3>
+
+<p>```java
+    et_spec_content_2.addTextChangedListener(new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+       if(et_spec_content_2.isFocusable() &amp;&amp; !s.toString().equals("")) {
+           try{
+               textlength = et_spec_content_2.getText().toString().length();
+           }catch (NumberFormatException e){
+               e.printStackTrace();
+               return;
+           }
+
+           if (textlength == 4 &amp;&amp; before != 1) {
+               et_spec_content_2.setText(et_spec_content_2.getText().toString()+".");
+               et_spec_content_2.setSelection(et_spec_content_2.getText().length());
+           }else if (textlength == 7&amp;&amp; before != 1){
+               et_spec_content_2.setText(et_spec_content_2.getText().toString()+".");
+               et_spec_content_2.setSelection(et_spec_content_2.getText().length());
+           }else if(textlength == 5 &amp;&amp; !et_spec_content_2.getText().toString().contains(".")){
+               et_spec_content_2.setText(et_spec_content_2.getText().toString().substring(0,4)+"."+et_spec_content_2.getText().toString().substring(4));
+               et_spec_content_2.setSelection(et_spec_content_2.getText().length());
+           }else if(textlength == 8 &amp;&amp; !et_spec_content_2.getText().toString().substring(7,8).equals(".")){
+               et_spec_content_2.setText(et_spec_content_2.getText().toString().substring(0,7)+"."+et_spec_content_2.getText().toString().substring(7));
+               et_spec_content_2.setSelection(et_spec_content_2.getText().length());
+           }
+       }
+
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+    }
+    });
+```
+</code></pre></div></div>
+
+<p><a href="#" class="btn btn--primary">맨위로👆</a></p>
+:ET

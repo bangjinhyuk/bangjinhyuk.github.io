@@ -4,7 +4,7 @@ title: "Docker 생성, 실행, 종료"
 subtitle: "Docker 명령어 모음집"
 categories: [DevOps]
 tags: [Server,Docker,DevOps]
-date: 2022-04-20 10:00:00
+date: 2022-04-20 18:00:00
 background: '/img/4.jpg'
 ---
 
@@ -81,11 +81,16 @@ background: '/img/4.jpg'
 <br>
 
 - 컨테이너 종료 (SIGTERM 시그널 전달)
+
     `$ docker stop [container]`
+
 - 모든 컨테이너 종료
-`$ docker stop $(docker ps -a -q)`
+
+    `$ docker stop $(docker ps -a -q)`
+
 - 컨테이너 강제 종료 (SIGKILL 시그널 전달)
-`$ docker kill [container]`
+
+    `$ docker kill [container]`
 
 <br>
 

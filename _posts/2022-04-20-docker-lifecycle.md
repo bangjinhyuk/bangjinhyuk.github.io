@@ -1,13 +1,12 @@
 ---
 layout: post
-title: "Docker 생성, 실행, 종료"
-subtitle: "Docker 명령어 모음집"
+title: "Kafka 구조"
+subtitle: "Kafka에 대해 자세히"
 categories: [DevOps]
-tags: [Server,Docker,DevOps]
-date: 2022-04-20 18:00:00
-background: '/img/4.jpg'
+tags: [Server,Kafka,DevOps]
+date: 2022-04-20 10:00:00
+background: '/img/5.jpg'
 ---
-
 [//]: # ()
 [//]: # (## 도커 이미지 이름 구성)
 
